@@ -1,6 +1,0 @@
-[
-  {"name": "precheck",      "bin": "test",   "args": ["-f", "plan.json"]},
-  {"name": "backup",        "bin": "date",   "args": ["+%s"]},
-  {"name": "artifact_hash", "bin": "sha256sum", "args": ["plan.json"]},
-  {"name": "mark_done",     "bin": "echo",   "args": ["deploy ok"]}
-]

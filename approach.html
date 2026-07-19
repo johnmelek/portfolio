@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Approach, John Melek</title>
+<meta name="description" content="How John Melek runs a deployment: proof over promises, local-first and key-free, safe by default.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+
+    <section class="hero" data-sec="approach" style="padding-bottom:30px">
+      <span class="kicker">APPROACH</span>
+      <h1>PROOF OVER <span class="accent">PROMISES</span></h1>
+      <p class="lede">A deployment is only real when the software runs on the client machine and the team can use it. Three rules keep every engagement honest.</p>
+    </section>
+
+    <section class="sec rv">
+      <div class="appr">
+        <div class="c"><div class="n">01</div><h3>Proof, not promises</h3><p>Every number on this site is measured or drawn from a real engagement: recovery counts, site ranges, rollout windows. I do not pad a portfolio with invented metrics. If a claim is from client work under disclosure, I say so and share what I can.</p></div>
+        <div class="c"><div class="n">02</div><h3>Local-first, key-free</h3><p>The tools I build run on the client machine with no API key and no cloud dependency. You watch them work the same afternoon, then you own the code. Nothing here needs a paid service to demonstrate.</p></div>
+        <div class="c"><div class="n">03</div><h3>Safe by default</h3><p>Scoped recon stays local. Rollouts run in waves with one-click rollback. Before anything changes in production, I isolate the real cause one variable at a time. No destructive step ships without a verified reason.</p></div>
+      </div>
+    </section>
+
+    <section class="sec rv">
+      <div class="sec-head"><span class="no">/ METHOD</span><h2>What a day on site looks like</h2></div>
+      <div class="case">
+        <div class="body">
+          <div class="lbl">Arrive</div>
+          <p>Read the system as it is, not as the ticket describes it. Pull the three sources of truth, the logs, and the failure window.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="body">
+          <div class="lbl">Isolate</div>
+          <p>Change one variable at a time. Prove which layer is actually broken before touching anything. Most "broken integrations" are a protocol mismatch or a dead endpoint, not a rebuild.</p>
+        </div>
+      </div>
+      <div class="case">
+        <div class="body">
+          <div class="lbl">Ship</div>
+          <p>Build the smallest thing that runs. Demo it on their machine. Hand over code they can read, run, and own.</p>
+        </div>
+      </div>
+      <div class="cta" style="margin-top:24px"><a class="btn signal" href="fieldlog.html">SEE IT IN THE FIELD LOG →</a></div>
+    </section>
+
+    <footer class="foot">
+      <div class="big">Let us <a href="contact.html">build it.</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+
+  </div>
+</main>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

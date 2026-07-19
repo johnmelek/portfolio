@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field Log, John Melek</title>
+<meta name="description" content="Real engagements by John Melek. Root cause first, then the fix. Numbers are measured, not invented.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+
+    <section class="hero" data-sec="fieldlog" style="padding-bottom:30px">
+      <span class="kicker">FIELD LOG</span>
+      <h1>ROOT CAUSE <span class="accent">FIRST</span></h1>
+      <p class="lede">Real engagements. The situation, the approach, and the measured result. Two are detailed here; the full case history is available on request.</p>
+    </section>
+
+    <section class="sec rv">
+      <article class="case">
+        <div class="top"><span class="id">CASE 001</span><h3>Bulk customer-data recovery across 12 distributed sites</h3></div>
+        <div class="body">
+          <div class="lbl">Situation</div>
+          <p>A French automotive group's customer records were silently losing phone numbers at every dealership. The live incremental sync, the integration the whole pipeline depended on, had gone dark group-wide after a downstream change. The nightly batch was erroring and no record was being completed.</p>
+        </div>
+        <div class="body">
+          <div class="lbl">Approach</div>
+          <p>I isolated the failure to one variable at a time and proved the incremental endpoint was dead for any watermark. Rather than edit the broken stored configuration, I built an external reconciliation process in Python: extract the affected records from the CRM, fetch the missing values from the source system matched by exact record ID, and inject them back through the API, writing only currently empty fields.</p>
+        </div>
+        <div class="body">
+          <div class="lbl">Result</div>
+          <p class="res">Recovered <b>1,830</b> missing records across the 12 sites with a <b>100% match rate</b> on record ID, zero destructive writes, and the batch job back to <b>0 errors</b>. The broken incremental path was left dead and replaced by a process I could verify end to end.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="top"><span class="id">CASE 002</span><h3>Real-time gateway stall on a streaming-only upstream</h3></div>
+        <div class="body">
+          <div class="lbl">Situation</div>
+          <p>An internal app's AI features hung indefinitely. Requests to the model gateway never returned. The infrastructure looked healthy: no server errors, no timeouts. A classic "not a network problem" symptom that points at the wrong layer.</p>
+        </div>
+        <div class="body">
+          <div class="lbl">Approach</div>
+          <p>I traced the request path end to end and found the real cause: the client was requesting a non-streaming response from an upstream that only speaks Server-Sent Events. No sudo, no network change, no vendor ticket. The diagnostic discipline, prove the real cause before touching anything, is the whole point of the engagement.</p>
+        </div>
+        <div class="body">
+          <div class="lbl">Result</div>
+          <p class="res">Streaming restored with a <b>one-line client change</b>. No infrastructure rebuild. The dependency was never broken. It was being asked the wrong question.</p>
+        </div>
+      </article>
+
+      <div class="cta" style="margin-top:26px">
+        <a class="btn signal" href="work.html">SEE MORE ENGAGEMENTS →</a>
+        <a class="btn" href="contact.html">REQUEST THE FULL HISTORY</a>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="big">Let us <a href="contact.html">build it.</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+
+  </div>
+</main>
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

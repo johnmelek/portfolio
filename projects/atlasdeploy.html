@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AtlasDeploy, John Melek</title>
+<meta name="description" content="AtlasDeploy, a wave deployment orchestrator by John Melek. Rolls a release across sites in waves with real steps and rollback.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+    <section class="pj-hero" data-sec="projects">
+      <a class="back" href="../projects.html">← THE SELECTED SET</a>
+      <div class="idx">TOOL 06 / 06</div>
+      <h1>ATLASDEPLOY</h1>
+      <div class="sub">Wave deployment orchestrator</div>
+      <p class="desc">You need to push a release across many locations without taking them all down at once. AtlasDeploy runs the rollout in waves, executes a real but safe step plan per site, streams live progress, and supports one-click rollback. Every shell step is allowlisted, so nothing destructive can run.</p>
+    </section>
+    <section class="sec rv">
+      <div class="pj-grid">
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>WHAT IT DOES</h4>
+            <div class="kv"><span>Sites</span><span>8, in 3 waves</span></div>
+            <div class="kv"><span>Steps</span><span>allowlisted, real</span></div>
+            <div class="kv"><span>Stream</span><span>Server-Sent Events</span></div>
+            <div class="kv"><span>Rollback</span><span>one-click, reverse</span></div>
+            <div class="kv"><span>Demo</span><span>8/8 deployed, rolled back</span></div>
+          </div>
+          <div class="pj-card">
+            <h4>STACK</h4>
+            <div class="stackline">
+              <span class="s"><b>Python</b> 3.11</span>
+              <span class="s"><b>FastAPI</b></span>
+              <span class="s">asyncio</span>
+              <span class="s">subprocess</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>RUN IT</h4>
+            <div class="codebox">
+<span class="c"># no API key, safe step allowlist</span><br>
+<span class="k">uv venv &amp;&amp; uv pip install</span> fastapi uvicorn<br>
+<span class="k">uv run</span> uvicorn app:app --port 8002<br>
+<span class="c"># start the rollout, then:</span><br>
+<span class="k">curl -X POST</span> localhost:8002/api/deploy<br>
+<span class="k">curl -X POST</span> localhost:8002/api/rollback
+            </div>
+            <div class="pj-tags" style="margin-top:14px">
+              <span><a href="https://github.com/johnmelek/atlasdeploy" style="color:var(--signal)">REPOSITORY →</a></span>
+              <span>zero keys</span><span>safe by default</span>
+            </div>
+          </div>
+          <div class="pj-card">
+            <h4>SAFETY</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">The step runner rejects any binary not on the allowlist. There is no shell, no redirects, no path to run an arbitrary command. The demo plan proves the site is healthy, then marks it done. Swap in your own safe steps for a real rollout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="foot">
+      <div class="big">Back to <a href="../projects.html">the set →</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+  </div>
+</main>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

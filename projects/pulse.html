@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse, John Melek</title>
+<meta name="description" content="Pulse, a client-site uptime monitor by John Melek. Response time, TLS cert expiry, SSE live status, sparklines.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+    <section class="pj-hero" data-sec="projects">
+      <a class="back" href="../projects.html">← THE SELECTED SET</a>
+      <div class="idx">TOOL 05 / 06</div>
+      <h1>PULSE</h1>
+      <div class="sub">Client-site uptime monitor</div>
+      <p class="desc">You leave it running at the customer's office. It polls a list of endpoints, tracks HTTP status, response time, and TLS certificate expiry, streams live status over SSE, and draws response-time sparklines on a canvas. History is appended to a JSONL file, so there is no database to babysit.</p>
+    </section>
+    <section class="sec rv">
+      <div class="pj-grid">
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>WHAT IT DOES</h4>
+            <div class="kv"><span>Probe</span><span>HTTP / HTTPS</span></div>
+            <div class="kv"><span>Metrics</span><span>status · ms · cert</span></div>
+            <div class="kv"><span>Stream</span><span>SSE live</span></div>
+            <div class="kv"><span>History</span><span>JSONL, no DB</span></div>
+            <div class="kv"><span>Demo</span><span>3 endpoints</span></div>
+          </div>
+          <div class="pj-card">
+            <h4>STACK</h4>
+            <div class="stackline">
+              <span class="s"><b>Node</b></span>
+              <span class="s"><b>Express</b></span>
+              <span class="s">SSE</span>
+              <span class="s">canvas</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>RUN IT</h4>
+            <div class="codebox">
+<span class="c"># no API key, no cloud</span><br>
+<span class="k">npm install</span><br>
+<span class="k">npm start</span><br>
+<span class="c"># watch the dashboard, then:</span><br>
+<span class="k">curl</span> localhost:3002/api/status
+            </div>
+            <div class="pj-tags" style="margin-top:14px">
+              <span><a href="https://github.com/johnmelek/pulse" style="color:var(--signal)">REPOSITORY →</a></span>
+              <span>zero keys</span><span>runs offline</span>
+            </div>
+          </div>
+          <div class="pj-card">
+            <h4>FIELD ORIGIN</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">After you deploy something at a client site, someone needs to know when it stops answering. Pulse is a small monitor you can leave behind: open the page, see green or red, spot a cert about to expire before it does.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="foot">
+      <div class="big">Next: <a href="atlasdeploy.html">AtlasDeploy →</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+  </div>
+</main>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

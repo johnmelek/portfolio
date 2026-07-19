@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReconPlanner, John Melek</title>
+<meta name="description" content="ReconPlanner, a scoped recon and surface map by John Melek. Passive DNS for declared domains, safe localhost scan, graph.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+    <section class="pj-hero" data-sec="projects">
+      <a class="back" href="../projects.html">← THE SELECTED SET</a>
+      <div class="idx">TOOL 04 / 06</div>
+      <h1>RECONPLANNER</h1>
+      <div class="sub">Scoped recon and surface map</div>
+      <p class="desc">Before you assess a client's external surface, you need a plan and a declared scope. ReconPlanner reads a scope file, enumerates subdomain candidates with passive DNS lookups, runs a safe port scan against localhost, and renders the result as an attack-surface graph plus a markdown report.</p>
+    </section>
+    <section class="sec rv">
+      <div class="pj-grid">
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>WHAT IT DOES</h4>
+            <div class="kv"><span>Scope</span><span>declared domains</span></div>
+            <div class="kv"><span>Enumeration</span><span>passive DNS</span></div>
+            <div class="kv"><span>Scan</span><span>localhost only</span></div>
+            <div class="kv"><span>Output</span><span>SVG graph + report</span></div>
+            <div class="kv"><span>Dependencies</span><span>none, stdlib</span></div>
+          </div>
+          <div class="pj-card">
+            <h4>STACK</h4>
+            <div class="stackline">
+              <span class="s"><b>Python</b> 3.11</span>
+              <span class="s">stdlib</span>
+              <span class="s">socket</span>
+              <span class="s">http.server</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>RUN IT</h4>
+            <div class="codebox">
+<span class="c"># no API key, standard library only</span><br>
+<span class="k">python3</span> app.py<br>
+<span class="c"># edit scope.json first, then:</span><br>
+<span class="k">curl</span> localhost:8001/api/graph<br>
+<span class="k">curl</span> localhost:8001/api/report
+            </div>
+            <div class="pj-tags" style="margin-top:14px">
+              <span><a href="https://github.com/johnmelek/recon" style="color:var(--signal)">REPOSITORY →</a></span>
+              <span>zero keys</span><span>local-only scan</span>
+            </div>
+          </div>
+          <div class="pj-card">
+            <h4>SAFETY MODEL</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">Active scanning targets 127.0.0.1 only. DNS runs passive lookups for declared domains. It never brute-forces external ranges or scans hosts you do not control. Point it at systems you have permission to test.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="foot">
+      <div class="big">Next: <a href="pulse.html">Pulse →</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+  </div>
+</main>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

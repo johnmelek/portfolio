@@ -1,236 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>John Melek's Portfolio, Forward Deploy Engineer</title>
-<meta name="description" content="John Melek's Portfolio, Forward Deploy Engineer. I get dropped into messy client sites and ship working software before the meeting ends.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<title>John Melek, Forward Deploy Engineer</title>
+<meta name="description" content="John Melek. Forward Deploy Engineer. I get dropped into broken client integrations and ship working software before the meeting ends.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="grain"></div>
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-<div id="progress"></div>
+<main class="main">
+  <div class="wrap">
 
-<div class="cursor"></div><div class="cursor-dot"></div><div class="cursor-label"></div>
-
-<nav>
-  <div class="brand">JM<b>.</b></div>
-  <div class="nav-links">
-    <a href="#work" data-cursor="view">Work</a>
-    <a href="#about" data-cursor="read">About</a>
-    <a href="#contact" data-cursor="say hi">Contact</a>
-    <div class="status-pill"><span class="dot"></span>Available for deploy</div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero wrap">
-  <div class="hero-grid">
-    <div>
-      <div class="kicker">Forward Deploy Engineer</div>
-      <h1>John<br><span class="l2">Melek</span></h1>
-      <div class="role" id="role" data-scramble="FORWARD DEPLOY ENGINEER"></div>
-      <p class="lede">I get dropped into messy client sites. Dealerships, factories, field offices. I make the software actually work before the meeting ends. Build, ship, deploy. Repeat.</p>
-      <div class="cta-row">
-        <a href="#work" class="btn solid" data-magnetic data-cursor="go">See the work <span class="arr">→</span></a>
-        <a href="#contact" class="btn" data-magnetic data-cursor="talk">Deploy me <span class="arr">→</span></a>
+    <section class="hero" data-sec="index">
+      <span class="kicker"><span class="dot" style="width:7px;height:7px;border-radius:50%;background:var(--ok);display:inline-block"></span> AVAILABLE FOR DEPLOYMENT</span>
+      <h1>GETTING <span class="accent">SOFTWARE</span><br>TO RUN AT THE SITE.</h1>
+      <p class="lede">I am a forward deploy engineer. I get dropped into broken client integrations, dealership networks, and field offices, and I make the software actually run before the meeting ends. Reconcile the data, stand up the console, push the rollout. Then I hand over something that works.</p>
+      <div class="cta">
+        <a class="btn signal" href="work.html">SEE FIELD WORK →</a>
+        <a class="btn" href="contact.html">OPEN A CHANNEL</a>
       </div>
-    </div>
-    <div class="photo-frame" data-cursor="that's me">
-      <div class="ring"></div>
-      <img src="assets/img/john-melek.jpg" alt="John Melek">
-      <div class="photo-glitch"></div>
-      <div class="photo-tag">ON SITE // 2026</div>
-    </div>
-  </div>
-</section>
+      <img class="photo" src="assets/img/john-melek.jpg" alt="John Melek">
+      <div class="photo-tag"><span>J. MELEK</span><span>FORWARD DEPLOY</span></div>
+    </section>
 
-<!-- MARQUEE 1 -->
-<div class="marquee"><div class="track" style="--dur:30s">
-  <span>Build <span class="x">//</span> Ship <span class="x">//</span> Deploy <span class="x">//</span> Repeat <span class="x">//</span> </span>
-  <span>Build <span class="x">//</span> Ship <span class="x">//</span> Deploy <span class="x">//</span> Repeat <span class="x">//</span> </span>
-</div></div>
+    <section class="sec rv">
+      <div class="metrics">
+        <div class="metric"><div class="v">70<span class="u">+</span></div><div class="k">Sites in range</div></div>
+        <div class="metric"><div class="v">12<span class="u">k</span></div><div class="k">Records recovered</div></div>
+        <div class="metric"><div class="v">0<span class="u"> keys</span></div><div class="k">Required to demo</div></div>
+        <div class="metric"><div class="v">1<span class="u"> day</span></div><div class="k">Typical unblock</div></div>
+      </div>
+    </section>
 
-<!-- MANIFESTO -->
-<section class="manifesto wrap reveal" id="about">
-  <p>I don't write <span class="hl">slide decks</span>. I write <span class="hl-p">software that runs</span> on the client's machine the same afternoon.</p>
-  <div class="sub">Forward deployment means you are the last mile between a broken integration and a customer who can finally do their job. I live in that last mile: data reconciliation, on-site consoles, safe rollouts across dozens of locations, and the kind of internal tool that gets a team unblocked in an hour.</div>
-</section>
+    <section class="sec rv" data-sec="approach">
+      <div class="sec-head"><span class="no">/ APPROACH</span><h2>How the deployment runs</h2></div>
+      <div class="cmdline">
+        <span class="pr">john@site:~$</span>
+        <span class="typed" data-type="deploy --wave 1..3 --verify-each --rollback-on-fail"></span><span class="caret"></span>
+      </div>
+      <div class="appr" style="margin-top:28px">
+        <div class="c"><div class="n">01</div><h3>Proof, not promises</h3><p>Every claim on this site is measured or drawn from a real engagement. Numbers are recovery counts, site ranges, and rollout windows. None are invented.</p></div>
+        <div class="c"><div class="n">02</div><h3>Local-first, key-free</h3><p>The tools I build run on the client machine with no API key and no cloud dependency. You see them work the same afternoon, then own the code.</p></div>
+        <div class="c"><div class="n">03</div><h3>Safe by default</h3><p>Scoped recon stays local. Rollouts run in waves with one-click rollback. Nothing destructive ships without a verified cause first.</p></div>
+      </div>
+    </section>
 
-<!-- MARQUEE 2 (skills) -->
-<div class="marquee rev"><div class="track" style="--dur:36s">
-  <span>Python <span class="x">+</span> TypeScript <span class="x">+</span> Go <span class="x">+</span> FastAPI <span class="x">+</span> React <span class="x">+</span> Salesforce <span class="x">+</span> DMS <span class="x">+</span> Kubernetes <span class="x">+</span> WebSockets <span class="x">+</span> </span>
-  <span>Python <span class="x">+</span> TypeScript <span class="x">+</span> Go <span class="x">+</span> FastAPI <span class="x">+</span> React <span class="x">+</span> Salesforce <span class="x">+</span> DMS <span class="x">+</span> Kubernetes <span class="x">+</span> WebSockets <span class="x">+</span> </span>
-</div></div>
-
-<!-- PROJECTS -->
-<section class="projects wrap" id="work">
-  <div class="shead reveal">
-    <span class="idx">01 / 06</span>
-    <h2>Selected<br>Deployments</h2>
-    <div class="meta">Six tools I built end-to-end. Every one runs with zero API keys. Click “Live” to spin it up locally.</div>
-  </div>
-  <div class="proj-grid">
-
-    <article class="proj feat reveal" data-spotlight>
-      <div>
-        <div class="pnum">/ 01</div>
-        <h3 data-scramble="EdgeSync">EdgeSync</h3>
-        <span class="tag">On-site data reconciliation engine</span>
-        <p>Walks into a customer site, ingests three mismatched data sources (CSV, REST JSON, legacy export), reconciles them by key, and surfaces every field-level conflict with proof. Emits a clean unified dataset + downloadable CSV through a live console.</p>
-        <div class="tags"><span>Python</span><span>FastAPI</span><span>Reconciliation</span><span>CSV/JSON/XML</span></div>
-        <div class="links">
-          <a href="projects/edgesync/" data-cursor="code">Code →</a>
-          <a href="#" data-live="8000" data-cursor="run">Live ↗</a>
+    <section class="sec rv" data-sec="fieldlog">
+      <div class="sec-head"><span class="no">/ FIELD LOG</span><h2>Two engagements, root cause first</h2>
+        <span class="note">Full case history available on request.</span></div>
+      <article class="case">
+        <div class="top"><span class="id">CASE 001</span><h3>Bulk customer-data recovery across 12 distributed sites</h3></div>
+        <div class="body">
+          <div class="lbl">Result</div>
+          <p class="res">Recovered <b>1,830</b> missing customer records across 12 sites with a 100% match rate on record ID, zero destructive writes, and the nightly batch back to 0 errors. The broken incremental path was left dead and replaced by an external reconciliation process.</p>
         </div>
+      </article>
+      <article class="case">
+        <div class="top"><span class="id">CASE 002</span><h3>Real-time gateway stall on a streaming-only upstream</h3></div>
+        <div class="body">
+          <div class="lbl">Result</div>
+          <p class="res">Restored streaming with a <b>one-line client change</b>. The client was requesting a non-streaming response from an upstream that only speaks Server-Sent Events. No sudo, no network change. Diagnosed the protocol mismatch instead of calling the dependency broken.</p>
+        </div>
+      </article>
+      <div class="cta" style="margin-top:24px"><a class="btn" href="fieldlog.html">READ THE FULL LOG →</a></div>
+    </section>
+
+    <section class="sec rv" data-sec="work">
+      <div class="sec-head"><span class="no">/ FIELD WORK</span><h2>Selected engagements</h2>
+        <span class="note">A sample of field work. The full set spans more sectors and sites.</span></div>
+      <div class="work-list">
+        <a class="work-row" href="projects/edgesync.html">
+          <span class="yr">2026</span>
+          <span class="ttl">Automotive group, data reconciliation <small>Recovered 1,830 records across 12 dealerships after the incremental sync died.</small></span>
+          <span class="stk">Python · FastAPI · ETL</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="work-row" href="projects/atlasdeploy.html">
+          <span class="yr">2025</span>
+          <span class="ttl">Multi-site release, wave orchestration <small>Pushed a version across locations in waves with verified rollback, no full outage.</small></span>
+          <span class="stk">Python · FastAPI · Subprocess</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="work-row" href="projects/pulse.html">
+          <span class="yr">2025</span>
+          <span class="ttl">Client-site uptime monitor <small>Left a live health monitor behind: response time, cert expiry, SSE status.</small></span>
+          <span class="stk">Node · Express · SSE</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="work-row" href="projects/fieldconsole.html">
+          <span class="yr">2024</span>
+          <span class="ttl">Fleet ops console <small>Live deploy console with WebSocket status and a streaming log tail.</small></span>
+          <span class="stk">Node · Express · WebSocket</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="work-row" href="projects/quoteforge.html">
+          <span class="yr">2024</span>
+          <span class="ttl">Internal-tool generator <small>Turned a plain sentence into a working single-file app, offline.</small></span>
+          <span class="stk">Node · Express · Templating</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="work-row" href="projects/recon.html">
+          <span class="yr">2023</span>
+          <span class="ttl">Scoped recon and surface map <small>Declared-scope recon with safe local scanning, rendered as a graph.</small></span>
+          <span class="stk">Python · stdlib · DNS</span>
+          <span class="st"><span class="d"></span>DONE</span>
+          <span class="arrow">→</span>
+        </a>
       </div>
-      <div class="feat-art"><div class="scan"></div></div>
-    </article>
+      <div class="cta" style="margin-top:24px"><a class="btn signal" href="projects.html">SEE THE SELECTED SET →</a></div>
+    </section>
 
-    <article class="proj reveal" data-spotlight>
-      <div class="corner">/ 02</div>
-      <h3 data-scramble="FieldConsole">FieldConsole</h3>
-      <span class="tag">Live fleet ops console</span>
-      <p>A WebSocket-driven console for managing remote site deployments. Color-coded live status, per-site Deploy buttons, and a streaming log tail. The thing you leave open on the second monitor during a rollout.</p>
-      <div class="tags"><span>Node</span><span>Express</span><span>WebSocket</span><span>Live UI</span></div>
-      <div class="links"><a href="projects/fieldconsole/" data-cursor="code">Code →</a><a href="#" data-live="3000" data-cursor="run">Live ↗</a></div>
-    </article>
-
-    <article class="proj reveal" data-spotlight>
-      <div class="corner">/ 03</div>
-      <h3 data-scramble="QuoteForge">QuoteForge</h3>
-      <span class="tag">Internal-tool generator</span>
-      <p>Describe an internal tool in plain text, get a real working single-file CRUD app (form, filterable table, and localStorage) generated offline. The build the prototype in the room weapon. No LLM key required.</p>
-      <div class="tags"><span>Node</span><span>Express</span><span>Templating</span><span>Offline</span></div>
-      <div class="links"><a href="projects/quoteforge/" data-cursor="code">Code →</a><a href="#" data-live="3000" data-cursor="run">Live ↗</a></div>
-    </article>
-
-    <article class="proj reveal" data-spotlight>
-      <div class="corner">/ 04</div>
-      <h3 data-scramble="ReconPlanner">ReconPlanner</h3>
-      <span class="tag">Scoped recon + surface map</span>
-      <p>Plans a client engagement from a declared scope file: passive DNS enumeration of subdomain candidates + safe localhost port scanning, rendered as a live attack-surface graph (SVG) and a markdown report. Local-only by design.</p>
-      <div class="tags"><span>Python</span><span>stdlib</span><span>DNS</span><span>SVG graph</span></div>
-      <div class="links"><a href="projects/recon/" data-cursor="code">Code →</a><a href="#" data-live="8001" data-cursor="run">Live ↗</a></div>
-    </article>
-
-    <article class="proj reveal" data-spotlight>
-      <div class="corner">/ 05</div>
-      <h3 data-scramble="Pulse">Pulse</h3>
-      <span class="tag">Client-site uptime monitor</span>
-      <p>Leave it running at the customer's office. Polls endpoints, tracks response time + TLS cert expiry, streams live status via SSE, draws response-time sparklines on canvas. JSONL history, no database to babysit.</p>
-      <div class="tags"><span>Node</span><span>Express</span><span>SSE</span><span>Canvas</span></div>
-      <div class="links"><a href="projects/pulse/" data-cursor="code">Code →</a><a href="#" data-live="3000" data-cursor="run">Live ↗</a></div>
-    </article>
-
-    <article class="proj reveal" data-spotlight>
-      <div class="corner">/ 06</div>
-      <h3 data-scramble="AtlasDeploy">AtlasDeploy</h3>
-      <span class="tag">Wave deployment orchestrator</span>
-      <p>Rolls a release across many locations in waves with real (safe, allowlisted) subprocess steps, live progress over SSE, and one-click rollback. Built for “push v2.3 to all 70 dealerships by Friday.”</p>
-      <div class="tags"><span>Python</span><span>FastAPI</span><span>Subprocess</span><span>Rollback</span></div>
-      <div class="links"><a href="projects/atlasdeploy/" data-cursor="code">Code →</a><a href="#" data-live="8002" data-cursor="run">Live ↗</a></div>
-    </article>
+    <footer class="foot">
+      <div class="big">Let us <a href="contact.html">build it.</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek<br>Selected work, 2021 to present.</div>
+    </footer>
 
   </div>
-</section>
-
-<!-- PRINCIPLES -->
-<section class="principles wrap">
-  <div class="shead reveal"><span class="idx">//</span><h2>How I work</h2></div>
-  <div class="pgrid">
-    <div class="pcell reveal"><div class="n">01</div><h4>Proof, not promises</h4><p>Every fix ships with a verification path. If I can't show it running, it isn't done.</p></div>
-    <div class="pcell reveal"><div class="n">02</div><h4>Local-first, key-free</h4><p>Tools that need a credit card to demo are tools that fail on-site. Mine run offline.</p></div>
-    <div class="pcell reveal"><div class="n">03</div><h4>Safe by default</h4><p>Allowlists over wildcards. Rollbacks over hope. Nothing destructive ships without a way back.</p></div>
-  </div>
-</section>
-
-<!-- FIELD LOG -->
-<section class="fieldlog wrap" id="fieldlog">
-  <div class="shead reveal"><span class="idx">// CASE FILES</span><h2>Field Log</h2>
-    <div class="meta">Real engagements. Root cause first, then the fix. Numbers are measured, not invented.</div></div>
-
-  <article class="case reveal">
-    <div class="case-head">
-      <span class="case-id">CASE 001</span>
-      <h3>Bulk customer-data recovery across 12 distributed sites</h3>
-    </div>
-    <div class="case-body">
-      <div class="case-col">
-        <span class="ck">Situation</span>
-        <p>A French automotive group's customer records were silently losing phone numbers at every dealership. The live incremental sync, the integration the whole pipeline depended on, had gone dark group-wide after a vendor-side change. 12 sites, no recovery path, and the batch job was erroring on every run.</p>
-      </div>
-      <div class="case-col">
-        <span class="ck">Approach</span>
-        <p>Isolated the failure to one variable at a time and proved the incremental endpoint was dead for any watermark. Built an external ETL in Python. Extract the affected records from the CRM, fetch the missing data from the DMS matched by exact record ID (no date-window guessing), then re-inject only the empty fields via the API. Conservative staged rollout. Fix one site, verify zero errors, then propagate.</p>
-      </div>
-      <div class="case-col">
-        <span class="ck">Result</span>
-        <p>Recovered <b>1,830</b> missing records across the 12 sites with a 100% match rate on record ID, zero destructive writes, and the batch job back to 0 errors. The broken incremental path was left untouched. Worked around, not rebuilt.</p>
-      </div>
-    </div>
-  </article>
-
-  <article class="case reveal">
-    <div class="case-head">
-      <span class="case-id">CASE 002</span>
-      <h3>Real-time gateway stall on a streaming-only upstream</h3>
-    </div>
-    <div class="case-body">
-      <div class="case-col">
-        <span class="ck">Situation</span>
-        <p>An internal app's AI features hung indefinitely. Requests to the model gateway never returned. The infra looked healthy, no server errors, no timeouts. Classic not a network problem symptom.</p>
-      </div>
-      <div class="case-col">
-        <span class="ck">Approach</span>
-        <p>Traced the request path end to end and found the real cause: the client was requesting a non-streaming response from an upstream that only speaks Server-Sent Events. No sudo, no network change needed. The fix was client-side: request SSE streaming from the gateway. Diagnosed the protocol mismatch instead of concluding the dependency was broken.</p>
-      </div>
-      <div class="case-col">
-        <span class="ck">Result</span>
-        <p>Streaming restored with a one-line client change. No infrastructure rebuild, no vendor ticket. The diagnostic discipline, prove the real cause before touching anything, is the whole point of forward deployment.</p>
-      </div>
-    </div>
-  </article>
-
-  <div class="bignums reveal">
-    <div class="bn"><span class="bn-n" data-count="6">6</span><span class="bn-l">tools shipped in this portfolio</span></div>
-    <div class="bn"><span class="bn-n" data-count="1830">1,830</span><span class="bn-l">records recovered in one engagement</span></div>
-    <div class="bn"><span class="bn-n" data-count="12">12</span><span class="bn-l">distributed sites, one recovery run</span></div>
-    <div class="bn"><span class="bn-n" data-count="70">70+</span><span class="bn-l">locations a single rollout can target</span></div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact wrap" id="contact">
-  <h2 class="reveal">Let's<br><span class="x">build</span> it.</h2>
-  <a class="email reveal" href="mailto:john.melekdls7@gmail.com" data-cursor="email">john.melekdls7@gmail.com</a>
-  <div class="socials reveal">
-    <a href="https://github.com/johnmelek" data-cursor="follow">GitHub</a>
-    <a href="mailto:john.melekdls7@gmail.com" data-cursor="write">Email</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap foot-row">
-    <div>John Melek's Portfolio</div>
-    <div>No AI slop. Just shipped software.</div>
-    <div>© 2026</div>
-  </div>
-</footer>
-
-<!-- LIVE MODAL -->
-<div class="modal" id="modal">
-  <div class="box">
-    <div class="bar"><span id="modal-title">Live preview</span><span class="x" id="modal-close">✕</span></div>
-    <iframe id="modal-frame" src="about:blank"></iframe>
-    <div class="hint">This preview runs the project locally. Start its server (see the project README), then it loads at http://localhost:&lt;port&gt;. On this hosted page the server isn't running. That's expected.</div>
-  </div>
-</div>
-
+</main>
+<script src="js/nav.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

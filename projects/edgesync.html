@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgeSync, John Melek</title>
+<meta name="description" content="EdgeSync, an on-site data reconciliation engine by John Melek. Matches records from CSV, REST JSON, and legacy exports by key, surfaces conflicts.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<main class="main">
+  <div class="wrap">
+
+    <section class="pj-hero" data-sec="projects">
+      <a class="back" href="../projects.html">← THE SELECTED SET</a>
+      <div class="idx">TOOL 01 / 06</div>
+      <h1>EDGESYNC</h1>
+      <div class="sub">On-site data reconciliation engine</div>
+      <p class="desc">Walk into a customer site. Their customer data lives in three places that do not agree: a CSV export, a REST JSON endpoint, and a legacy fixed-width dump. EdgeSync ingests all three, reconciles them by key, and surfaces every field-level conflict with proof. It emits a clean unified dataset and a downloadable CSV through a live console.</p>
+    </section>
+
+    <section class="sec rv">
+      <div class="pj-grid">
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>WHAT IT DOES</h4>
+            <div class="kv"><span>Sources</span><span>CSV · REST JSON · legacy</span></div>
+            <div class="kv"><span>Match key</span><span>record ID</span></div>
+            <div class="kv"><span>Conflict view</span><span>field-level, per source</span></div>
+            <div class="kv"><span>Output</span><span>unified JSON + CSV</span></div>
+            <div class="kv"><span>Demo data</span><span>12 records, 4 conflicts</span></div>
+          </div>
+          <div class="pj-card">
+            <h4>STACK</h4>
+            <div class="stackline">
+              <span class="s"><b>Python</b> 3.11</span>
+              <span class="s"><b>FastAPI</b></span>
+              <span class="s">Uvicorn</span>
+              <span class="s">stdlib csv/json</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pj-card" style="margin-bottom:20px">
+            <h4>RUN IT</h4>
+            <div class="codebox">
+<span class="c"># no API key, no cloud</span><br>
+<span class="k">uv venv &amp;&amp; uv pip install</span> fastapi uvicorn<br>
+<span class="k">uv run</span> uvicorn app:app --port 8000<br>
+<span class="c"># open the console, then:</span><br>
+<span class="k">curl</span> localhost:8000/api/stats<br>
+<span class="k">curl</span> localhost:8000/api/export.csv
+            </div>
+            <div class="pj-tags" style="margin-top:14px">
+              <span><a href="https://github.com/johnmelek/edgesync" style="color:var(--signal)">REPOSITORY →</a></span>
+              <span>zero keys</span><span>runs offline</span>
+            </div>
+          </div>
+          <div class="pj-card">
+            <h4>FIELD ORIGIN</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">Built from the automotive recovery engagement: 1,830 records reconciled across 12 dealerships. The demo dataset is sanitized, but the reconciliation logic is the same one that matched records by ID with a 100% rate.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec rv">
+      <div class="sec-head"><span class="no">/ WHY IT EXISTS</span><h2>The last mile of a data migration</h2></div>
+      <div class="case">
+        <div class="body">
+          <p>Most "data problems" at a client site are really three systems that disagree and nobody owns the merge. EdgeSync is the tool you run after the export lands and before anyone trusts the number. It does not invent data. It shows you exactly where the sources diverge and lets you decide, with proof, which value wins.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="big">Next: <a href="fieldconsole.html">FieldConsole →</a></div>
+      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+    </footer>
+
+  </div>
+</main>
+<script src="../js/nav.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

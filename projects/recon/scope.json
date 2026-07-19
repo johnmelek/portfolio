@@ -1,4 +1,0 @@
-{
-  "domains": ["example.com", "localhost.localdomain"],
-  "notes": "Declared scope only. DNS enumeration runs passive lookups for these. Port scanning is localhost-only by design."
-}
