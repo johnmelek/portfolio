@@ -17,6 +17,12 @@
       <div class="sub">Internal-tool generator</div>
       <p class="desc">You are at a client site. Someone says "I need a form to track test-drives." QuoteForge turns that sentence into a real, working single-file web app: a form, a filterable table, and localStorage persistence. No backend, no build, no API key. Download it and hand it over.</p>
     </section>
+
+    <div class="shot">
+      <img src="../assets/shots/quoteforge.png" alt="QuoteForge generating a working Vehicle Tracker app from a sentence">
+      <div class="cap">Live view. One sentence in, a working app out. QuoteForge detected the entity and fields, then rendered a real Vehicle Tracker with a form and table. The app saves in the browser.</div>
+    </div>
+
     <section class="sec rv">
       <div class="pj-grid">
         <div>
@@ -34,32 +40,26 @@
               <span class="s"><b>Node</b></span>
               <span class="s"><b>Express</b></span>
               <span class="s">templating</span>
-              <span class="s">vanilla output</span>
             </div>
           </div>
         </div>
         <div>
           <div class="pj-card" style="margin-bottom:20px">
-            <h4>RUN IT</h4>
-            <div class="codebox">
-<span class="c"># no API key required for the template path</span><br>
-<span class="k">npm install</span><br>
-<span class="k">npm start</span><br>
-<span class="c"># describe a tool, get a .html back</span><br>
-<span class="k">curl -X POST</span> localhost:3001/api/generate
-            </div>
+            <h4>PRACTICAL USE</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">The fastest way to unblock a team is a tool they can use today. A single HTML file they double-click beats a two-week backlog item. Describe the need, hand over the file.</p>
             <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/quoteforge" style="color:var(--signal)">REPOSITORY →</a></span>
-              <span>zero keys</span><span>offline core</span>
+              <span><a href="https://github.com/johnmelek/quoteforge" style="color:var(--signal)">SOURCE REPO →</a></span>
+              <span>offline core</span><span>no key</span>
             </div>
           </div>
           <div class="pj-card">
             <h4>FIELD ORIGIN</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">The fastest way to unblock a team is a tool they can use today. A single HTML file they double-click beats a two-week backlog item. This is the "build the prototype in the room" weapon.</p>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">The "build the prototype in the room" weapon. When a team needs a thing that tracks X by Y, you generate it in front of them and they walk away with working software.</p>
           </div>
         </div>
       </div>
     </section>
+
     <footer class="foot">
       <div class="big">Next: <a href="recon.html">ReconPlanner →</a></div>
       <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>

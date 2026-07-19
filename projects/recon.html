@@ -17,6 +17,12 @@
       <div class="sub">Scoped recon and surface map</div>
       <p class="desc">Before you assess a client's external surface, you need a plan and a declared scope. ReconPlanner reads a scope file, enumerates subdomain candidates with passive DNS lookups, runs a safe port scan against localhost, and renders the result as an attack-surface graph plus a markdown report.</p>
     </section>
+
+    <div class="shot">
+      <img src="../assets/shots/recon.png" alt="ReconPlanner attack-surface graph with resolved hosts and port scan">
+      <div class="cap">Live view. The attack-surface graph: declared domains resolve to hosts, the localhost hub shows open and closed ports, and the resolved-hosts panel lists what passive DNS returned.</div>
+    </div>
+
     <section class="sec rv">
       <div class="pj-grid">
         <div>
@@ -34,23 +40,16 @@
               <span class="s"><b>Python</b> 3.11</span>
               <span class="s">stdlib</span>
               <span class="s">socket</span>
-              <span class="s">http.server</span>
             </div>
           </div>
         </div>
         <div>
           <div class="pj-card" style="margin-bottom:20px">
-            <h4>RUN IT</h4>
-            <div class="codebox">
-<span class="c"># no API key, standard library only</span><br>
-<span class="k">python3</span> app.py<br>
-<span class="c"># edit scope.json first, then:</span><br>
-<span class="k">curl</span> localhost:8001/api/graph<br>
-<span class="k">curl</span> localhost:8001/api/report
-            </div>
+            <h4>PRACTICAL USE</h4>
+            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">It turns "what is exposed here" into a picture a non-technical stakeholder can read. This is the planning artifact you bring to the table before any testing starts.</p>
             <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/recon" style="color:var(--signal)">REPOSITORY →</a></span>
-              <span>zero keys</span><span>local-only scan</span>
+              <span><a href="https://github.com/johnmelek/recon" style="color:var(--signal)">SOURCE REPO →</a></span>
+              <span>local-only scan</span><span>no key</span>
             </div>
           </div>
           <div class="pj-card">
@@ -60,6 +59,7 @@
         </div>
       </div>
     </section>
+
     <footer class="foot">
       <div class="big">Next: <a href="pulse.html">Pulse →</a></div>
       <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
