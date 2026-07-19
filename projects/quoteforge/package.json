@@ -1,0 +1,10 @@
+{
+  "name": "quoteforge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "QuoteForge, generate working single-file internal tools from a plain description, offline.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "express": "^4.19.2" }
+}

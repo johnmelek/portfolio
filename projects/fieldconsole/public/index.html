@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FieldConsole</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--cyan:#22e0ff;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em} h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 22px;font-size:13px}
+  .conn{font-size:12px;padding:4px 10px;border:1px solid var(--line);display:inline-block;margin-bottom:20px}
+  .conn.on{color:var(--lime);border-color:var(--lime)} .conn.off{color:var(--pink)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:26px}
+  .site{background:var(--panel);border:1px solid var(--line);padding:16px;transition:border-color .3s}
+  .site.live{border-color:var(--cyan)}
+  .site .nm{font-weight:700;font-size:15px}
+  .site .rg{color:var(--dim);font-size:11px;margin:2px 0 10px}
+  .st{display:inline-block;padding:3px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line);margin-bottom:10px}
+  .healthy{color:var(--lime);border-color:var(--lime)}
+  .degraded{color:#ffb020;border-color:#ffb020}
+  .deploying{color:var(--cyan);border-color:var(--cyan);animation:pulse 1s infinite}
+  .offline{color:var(--pink);border-color:var(--pink)}
+  @keyframes pulse{50%{opacity:.4}}
+  .meta{font-size:11px;color:var(--dim);margin-bottom:12px}
+  button{background:var(--lime);color:#000;border:0;padding:9px 14px;font-family:var(--mono);font-weight:700;font-size:12px;cursor:pointer}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  .logbox{background:#000;border:1px solid var(--line);padding:14px;height:300px;overflow:auto;font-size:12px;color:var(--dim)}
+  h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:0 0 10px}
+</style>
+</head>
+<body>
+  <h1>Field<b>Console</b></h1>
+  <div class="sub">Live fleet ops. Deploy a site, watch the status flip in real time over WebSocket, tail the logs.</div>
+  <div id="conn" class="conn off">WS disconnected</div>
+
+  <h3>Site fleet</h3>
+  <div class="grid" id="grid"></div>
+
+  <h3>Live log tail</h3>
+  <div class="logbox" id="log"></div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+let sites=[];
+async function load(){
+  sites=await fetch('/api/sites').then(x=>x.json());
+  render();
+}
+function render(){
+  const g=$('#grid'); g.innerHTML='';
+  for(const s of sites){
+    const div=document.createElement('div'); div.className='site'; div.id='card-'+s.id;
+    const dis = (s.status==='deploying')?'disabled':'';
+    div.innerHTML=`<div class="nm">${s.name}</div><div class="rg">${s.region}</div>
+      <div class="st ${s.status}">${s.status}</div>
+      <div class="meta">${s.currentVersion} &rarr; ${s.targetVersion} · uptime ${s.uptime}%</div>
+      <button ${dis} onclick="deploy('${s.id}')">Deploy</button>`;
+    g.appendChild(div);
+  }
+}
+async function deploy(id){
+  await fetch('/api/sites/'+id+'/deploy',{method:'POST'});
+}
+function setStatus(id,status){
+  const s=sites.find(x=>x.id===id); if(!s) return;
+  s.status=status;
+  const card=document.getElementById('card-'+id);
+  const st=card.querySelector('.st'); st.className='st '+status; st.textContent=status;
+  const btn=card.querySelector('button'); if(status==='deploying') btn.disabled=true; else btn.disabled=false;
+  card.classList.add('live'); setTimeout(()=>card.classList.remove('live'),600);
+}
+function addLog(line){
+  const l=$('#log'); const d=document.createElement('div'); d.textContent=line; l.appendChild(d);
+  l.scrollTop=l.scrollHeight;
+}
+const ws=new WebSocket((location.protocol==='https:'?'wss':'ws')+'://'+location.host);
+ws.onopen=()=>{ const c=$('#conn'); c.className='conn on'; c.textContent='WS live'; };
+ws.onclose=()=>{ const c=$('#conn'); c.className='conn off'; c.textContent='WS disconnected'; };
+ws.onmessage=(e)=>{
+  const m=JSON.parse(e.data);
+  if(m.type==='status') setStatus(m.id,m.status);
+  else if(m.type==='log') addLog(m.line);
+  else if(m.type==='hello') addLog(`[ws] connected, ${m.sites} sites`);
+};
+load(); setInterval(load,8000);
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "records": [
+    {"id": "C001", "name": "Alice Martin", "email": "alice.martin@example.com", "phone": "0612340001", "city": "Lyon"},
+    {"id": "C002", "name": "Bruno Lopez", "email": "b.lopez@example.com", "phone": "0612340002", "city": "Paris"},
+    {"id": "C003", "name": "Chloe Dubois", "email": "chloe.dubois@example.com", "phone": "0799887766", "city": "Marseille"},
+    {"id": "C004", "name": "David Moreau", "email": "david.moreau@example.com", "phone": "0612340004", "city": "Lille"},
+    {"id": "C005", "name": "Eva Petit", "email": "eva.petit@example.com", "phone": "0612340005", "city": "Nantes"},
+    {"id": "C006", "name": "Frank Bernard", "email": "frank.bernard@example.com", "phone": "0612340006", "city": "Toulouse"},
+    {"id": "C007", "name": "Grace Roux", "email": "g.roux@example.com", "phone": "0612340007", "city": "Bordeaux"},
+    {"id": "C008", "name": "Henri Faure", "email": "henri.faure@example.com", "phone": "0612340008", "city": "Strasbourg"},
+    {"id": "C009", "name": "Ines Garnier", "email": "ines.garnier@example.com", "phone": "0612340009", "city": "Montpellier"},
+    {"id": "C010", "name": "Julien Chevalier", "email": "j.chevalier@example.com", "phone": "0612340010", "city": "Rennes"},
+    {"id": "C011", "name": "Kevin Lacroix", "email": "kevin.lacroix@example.com", "phone": "0612340011", "city": "Dijon"},
+    {"id": "C012", "name": "Lea Mercier", "email": "lea.mercier@example.com", "phone": "0612340012", "city": "Grenoble"}
+  ]
+}

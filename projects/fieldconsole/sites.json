@@ -1,0 +1,10 @@
+[
+  {"id": "s1", "name": "Lyon Centre",      "region": "Rhone",            "status": "healthy",   "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 99.2},
+  {"id": "s2", "name": "Paris Nord",       "region": "Ile-de-France",    "status": "degraded",  "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 87.4},
+  {"id": "s3", "name": "Marseille Prado",  "region": "PACA",             "status": "healthy",   "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 98.1},
+  {"id": "s4", "name": "Lille Flandres",   "region": "Hauts-de-France",  "status": "offline",   "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 0.0},
+  {"id": "s5", "name": "Nantes Atlantis",  "region": "Pays-de-la-Loire", "status": "healthy",   "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 96.7},
+  {"id": "s6", "name": "Toulouse Capitole","region": "Occitanie",        "status": "deploying", "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 91.0},
+  {"id": "s7", "name": "Bordeaux Garonne", "region": "Nouvelle-Aquitaine","status": "healthy",  "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 97.5},
+  {"id": "s8", "name": "Strasbourg Cathedrale", "region": "Grand-Est",   "status": "healthy",   "currentVersion": "2.2.0", "targetVersion": "2.3.0", "uptime": 95.8}
+]

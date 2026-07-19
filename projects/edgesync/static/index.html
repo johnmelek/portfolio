@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdgeSync</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em}
+  h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 26px;font-size:13px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+  .card{background:var(--panel);border:1px solid var(--line);padding:16px}
+  .card .n{font-size:28px;font-weight:700;color:var(--lime)}
+  .card .l{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+  .row{display:flex;gap:16px;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap}
+  button{background:var(--lime);color:#000;border:0;padding:12px 18px;font-family:var(--mono);font-weight:700;font-size:13px;cursor:pointer;letter-spacing:.04em}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+  th{color:var(--dim);text-transform:uppercase;font-size:11px;letter-spacing:.06em}
+  td.id{color:var(--lime);font-weight:700}
+  .src{display:inline-block;padding:2px 8px;margin-right:6px;border:1px solid var(--line);font-size:11px}
+  .src.csv{color:var(--lime)} .src.rest{color:var(--pink)} .src.legacy{color:#22e0ff}
+  .warn{padding:14px;border:1px solid var(--pink);color:var(--pink);font-size:13px;margin-bottom:20px}
+  .ok{padding:14px;border:1px solid var(--lime);color:var(--lime);font-size:13px;margin-bottom:20px}
+</style>
+</head>
+<body>
+  <h1>Edge<b>Sync</b></h1>
+  <div class="sub">On-site data reconciliation. Three sources, one truth. Matched by record ID.</div>
+
+  <div class="stats" id="stats"></div>
+  <div id="banner"></div>
+
+  <div class="row">
+    <button id="dl">Download unified CSV</button>
+    <button class="ghost" id="refresh">Reload</button>
+  </div>
+
+  <h3 style="margin-bottom:12px;font-size:14px;text-transform:uppercase;letter-spacing:.06em">Conflicts</h3>
+  <table id="tbl">
+    <thead><tr><th>ID</th><th>Field</th><th>Sources disagree</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+<script>
+const $ = (s) => document.querySelector(s);
+async function load(){
+  const [st, cf] = await Promise.all([
+    fetch('/api/stats').then(r=>r.json()),
+    fetch('/api/conflicts').then(r=>r.json()),
+  ]);
+  $('#stats').innerHTML = `
+    <div class="card"><div class="n">${st.counts.csv}</div><div class="l">CSV rows</div></div>
+    <div class="card"><div class="n">${st.counts.rest}</div><div class="l">REST rows</div></div>
+    <div class="card"><div class="n">${st.counts.legacy}</div><div class="l">Legacy rows</div></div>
+    <div class="card"><div class="n">${st.conflicts}</div><div class="l">Conflicts found</div></div>`;
+  if(st.conflicts===0){
+    $('#banner').innerHTML='<div class="ok">No field-level conflicts. Sources agree on every shared record.</div>';
+  } else {
+    $('#banner').innerHTML=`<div class="warn">${st.conflicts} conflict(s) across ${st.matched} matched records. Review below, then export the unified dataset.</div>`;
+  }
+  const tb = $('#tbl tbody'); tb.innerHTML='';
+  cf.conflicts.forEach(c=>{
+    const cells = Object.entries(c.values).map(([k,v])=>`<span class="src ${k}">${k}: ${v}</span>`).join('');
+    tb.insertAdjacentHTML('beforeend',`<tr><td class="id">${c.id}</td><td>${c.field}</td><td>${cells}</td></tr>`);
+  });
+}
+$('#dl').onclick=()=>window.location='/api/unified.csv';
+$('#refresh').onclick=load;
+load();
+</script>
+</body>
+</html>

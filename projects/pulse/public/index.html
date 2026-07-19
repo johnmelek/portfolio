@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--cyan:#22e0ff;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em} h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 22px;font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .ep{background:var(--panel);border:1px solid var(--line);padding:16px;transition:border-color .3s}
+  .ep.up{border-color:var(--lime)} .ep.down{border-color:var(--pink)}
+  .ep .nm{font-weight:700;font-size:15px}
+  .ep .url{color:var(--dim);font-size:11px;margin:2px 0 10px;word-break:break-all}
+  .pill{display:inline-block;padding:3px 10px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line)}
+  .up .pill{color:var(--lime);border-color:var(--lime)} .down .pill{color:var(--pink);border-color:var(--pink)}
+  .ms{font-size:12px;color:var(--dim);margin:8px 0}
+  .cert{font-size:11px;color:var(--cyan)}
+  canvas{width:100%;height:48px;display:block;margin-top:8px}
+</style>
+</head>
+<body>
+  <h1>Pulse</h1>
+  <div class="sub">Client-site uptime monitor. Live status, response time, TLS cert expiry, streamed over SSE. Leave it running.</div>
+  <div class="grid" id="grid"></div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+let cards={};
+function ensure(ep){
+  if(cards[ep.name]) return cards[ep.name];
+  const d=document.createElement('div'); d.className='ep'; d.id='ep-'+ep.name;
+  d.innerHTML=`<div class="nm">${ep.name}</div><div class="url">${ep.url}</div>
+    <div class="pill">${ep.up?'up':'down'}</div>
+    <div class="ms"></div><div class="cert"></div><canvas></canvas>`;
+  $('#grid').appendChild(d); cards[ep.name]=d; return d;
+}
+function drawSpark(canvas, data){
+  const ctx=canvas.getContext('2d'); const w=canvas.width=canvas.clientWidth; const h=canvas.height=48;
+  ctx.clearRect(0,0,w,h);
+  const vals=data.filter(d=>d.up).map(d=>d.ms);
+  if(!vals.length) return;
+  const max=Math.max(...vals,1); const n=vals.length;
+  ctx.strokeStyle='#c6ff00'; ctx.lineWidth=2; ctx.beginPath();
+  vals.forEach((v,i)=>{ const x=(i/(Math.max(1,n-1)))*w; const y=h-(v/max)*(h-6)-3; i?ctx.lineTo(x,y):ctx.moveTo(x,y); });
+  ctx.stroke();
+}
+const es=new EventSource('/api/stream');
+es.onmessage=(e)=>{
+  const m=JSON.parse(e.data); if(m.type!=='status') return;
+  for(const ep of m.snapshot){
+    const d=ensure(ep);
+    d.className='ep '+(ep.up?'up':'down');
+    d.querySelector('.pill').textContent=ep.up?('up '+ep.status):'down';
+    d.querySelector('.ms').textContent=ep.up?('response '+ep.ms+' ms'):'no response';
+    d.querySelector('.cert').textContent=ep.certDays!=null?('cert expires in '+ep.certDays+' days'):'';
+    fetch('/api/history/'+ep.name).then(r=>r.json()).then(h=>drawSpark(d.querySelector('canvas'),h));
+  }
+};
+</script>
+</body>
+</html>

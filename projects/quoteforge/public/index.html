@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuoteForge</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em} h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 22px;font-size:13px;max-width:64ch}
+  textarea{width:100%;min-height:90px;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:14px;font-family:var(--mono);font-size:14px;resize:vertical}
+  textarea:focus{outline:none;border-color:var(--lime)}
+  .row{display:flex;gap:14px;margin:14px 0 22px;flex-wrap:wrap;align-items:center}
+  button{background:var(--lime);color:#000;border:0;padding:11px 18px;font-family:var(--mono);font-weight:700;font-size:13px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .box{background:var(--panel);border:1px solid var(--line);padding:16px}
+  .box h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:12px}
+  iframe{width:100%;height:360px;border:1px solid var(--line);background:#0d0d0f}
+  pre{white-space:pre-wrap;font-size:11px;color:var(--dim);max-height:300px;overflow:auto}
+  .examples{font-size:12px;color:var(--dim);margin-bottom:10px}
+  .examples code{color:var(--cyan);cursor:pointer}
+</style>
+</head>
+<body>
+  <h1>Quote<b>Forge</b></h1>
+  <div class="sub">Describe an internal tool. Get a real, working single-file app (form, filterable table, localStorage). Runs offline, no API key.</div>
+
+  <div class="examples">Try: <code onclick="use(this)">a form to log vehicle test-drives with customer, car, date</code> &nbsp;·&nbsp; <code onclick="use(this)">track support tickets with subject, priority, assignee</code></div>
+  <textarea id="desc" placeholder="Describe the internal tool you need...">a form to log vehicle test-drives with customer, car, date</textarea>
+  <div class="row">
+    <button id="gen">Generate app</button>
+    <button class="ghost" id="dl">Download .html</button>
+  </div>
+
+  <div class="grid">
+    <div class="box">
+      <h3>Live preview</h3>
+      <iframe id="preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+    <div class="box">
+      <h3>Detected spec</h3>
+      <pre id="spec"></pre>
+    </div>
+  </div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+function use(el){ $('#desc').value=el.textContent; }
+let lastHtml="";
+$('#gen').onclick=async()=>{
+  const r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({description:$('#desc').value})});
+  const d=await r.json();
+  lastHtml=d.html;
+  $('#preview').srcdoc=d.html;
+  $('#spec').textContent=JSON.stringify(d.spec,null,2);
+};
+$('#dl').onclick=()=>{
+  if(!lastHtml) return;
+  const b=new Blob([lastHtml],{type:'text/html'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(b);
+  a.download='generated-tool.html'; a.click();
+};
+$('#gen').click();
+</script>
+</body>
+</html>

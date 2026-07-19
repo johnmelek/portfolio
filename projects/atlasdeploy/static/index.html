@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AtlasDeploy</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--cyan:#22e0ff;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em} h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 22px;font-size:13px;max-width:64ch}
+  .row{display:flex;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+  button{background:var(--lime);color:#000;border:0;padding:11px 16px;font-family:var(--mono);font-weight:700;font-size:13px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  button.danger{background:var(--pink);color:#000}
+  .wave{margin-bottom:22px}
+  .wave h3{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+  .site{background:var(--panel);border:1px solid var(--line);padding:14px}
+  .site .nm{font-weight:700;font-size:14px}
+  .site .rg{color:var(--dim);font-size:11px;margin:2px 0 10px}
+  .badge{display:inline-block;padding:3px 9px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border:1px solid var(--line)}
+  .pending{color:var(--dim)} .running{color:var(--cyan);border-color:var(--cyan)}
+  .done{color:var(--lime);border-color:var(--lime)} .failed{color:var(--pink);border-color:var(--pink)}
+  .rolled_back{color:var(--pink)}
+  .log{background:#000;border:1px solid var(--line);padding:14px;height:240px;overflow:auto;font-size:12px;color:var(--dim)}
+  .log b{color:var(--lime)}
+</style>
+</head>
+<body>
+  <h1>Atlas<b>Deploy</b></h1>
+  <div class="sub">Wave rollout across many sites. Real allowlisted shell steps, live progress, one-click rollback. Nothing destructive runs.</div>
+
+  <div class="row">
+    <button id="deploy">Start rollout</button>
+    <button class="danger" id="rollback">Rollback done</button>
+    <button class="ghost" id="refresh">Refresh</button>
+  </div>
+
+  <div id="waves"></div>
+
+  <h3 style="margin:8px 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)">Live log</h3>
+  <div class="log" id="log"></div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+const stateColor=(s)=>s;
+async function plan(){
+  const p=await fetch('/api/plan').then(x=>x.json());
+  const waves=[...new Set(p.sites.map(s=>s.wave))].sort();
+  const wrap=$('#waves'); wrap.innerHTML='';
+  for(const w of waves){
+    const sites=p.sites.filter(s=>s.wave===w);
+    const div=document.createElement('div'); div.className='wave';
+    div.innerHTML=`<h3>Wave ${w}</h3><div class="grid">`+
+      sites.map(s=>`<div class="site" id="${s.id}"><div class="nm">${s.name}</div><div class="rg">${s.region} · ${s.current} -> ${s.target}</div><span class="badge pending">pending</span></div>`).join('')+
+      `</div>`;
+    wrap.appendChild(div);
+  }
+}
+async function refresh(){
+  const r=await fetch('/api/state').then(x=>x.json());
+  for(const [id,st] of Object.entries(r.state)){
+    const el=document.getElementById(id); if(!el) continue;
+    const b=el.querySelector('.badge'); b.className='badge '+st; b.textContent=st.replace('_',' ');
+  }
+  $('#log').innerHTML=r.history.map(l=>`<div>${l.replace('done','<b>done</b>')}</div>`).join('');
+  $('#log').scrollTop=$('#log').scrollHeight;
+}
+$('#deploy').onclick=async()=>{ await fetch('/api/deploy',{method:'POST'}); refresh(); };
+$('#rollback').onclick=async()=>{ await fetch('/api/rollback',{method:'POST'}); refresh(); };
+$('#refresh').onclick=refresh;
+const es=new EventSource('/api/stream');
+es.onmessage=(e)=>{ const d=JSON.parse(e.data); if(d.event==='log'){ /* refresh picks it up */ } };
+es.onmessage=()=>refresh();
+plan(); refresh();
+setInterval(refresh,2000);
+</script>
+</body>
+</html>

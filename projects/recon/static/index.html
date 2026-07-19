@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReconPlanner</title>
+<style>
+  :root{--bg:#0d0d0f;--panel:#15151a;--ink:#f3f2ec;--dim:#9a9a92;--lime:#c6ff00;--pink:#ff2e63;--cyan:#22e0ff;--line:rgba(243,242,236,.14);--mono:ui-monospace,Menlo,Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--mono);padding:32px;line-height:1.5}
+  h1{font-size:30px;letter-spacing:-.02em} h1 b{color:var(--lime)}
+  .sub{color:var(--dim);margin:6px 0 24px;font-size:13px;max-width:60ch}
+  .row{display:flex;gap:14px;margin-bottom:20px;flex-wrap:wrap}
+  button{background:var(--lime);color:#000;border:0;padding:11px 16px;font-family:var(--mono);font-weight:700;font-size:13px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr}}
+  .box{background:var(--panel);border:1px solid var(--line);padding:16px}
+  .box h3{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin-bottom:12px}
+  svg{width:100%;height:auto;background:#0d0d0f;border:1px solid var(--line)}
+  pre{white-space:pre-wrap;font-size:12px;color:var(--ink);max-height:320px;overflow:auto}
+  .tag{display:inline-block;padding:2px 8px;border:1px solid var(--line);font-size:11px;margin:2px;color:var(--cyan)}
+  .warn{border:1px solid var(--pink);color:var(--pink);padding:10px 12px;font-size:12px;margin-bottom:18px}
+</style>
+</head>
+<body>
+  <h1>Recon<b>Planner</b></h1>
+  <div class="sub">Scoped recon. Passive DNS for declared domains, safe localhost port scan, attack-surface graph. Local-only scanning by design.</div>
+  <div class="warn">Active scanning is restricted to 127.0.0.1. DNS runs only for domains you declare in scope.json. Do not point this at hosts you do not have permission to assess.</div>
+
+  <div class="row">
+    <button id="run">Run plan</button>
+    <button class="ghost" id="report">Open markdown report</button>
+  </div>
+
+  <div class="grid">
+    <div class="box">
+      <h3>Attack surface</h3>
+      <div id="graph"><svg viewBox="0 0 900 520"><rect width="900" height="520" fill="#0d0d0f"/></svg></div>
+    </div>
+    <div class="box">
+      <h3>Resolved hosts</h3>
+      <div id="hosts"></div>
+      <h3 style="margin-top:18px">Local ports</h3>
+      <div id="ports"></div>
+    </div>
+  </div>
+
+<script>
+const $=(s)=>document.querySelector(s);
+async function run(){
+  const r=await fetch('/api/surface').then(x=>x.json());
+  $('#graph').innerHTML=await fetch('/api/graph').then(x=>x.text());
+  const hosts=r.nodes.filter(n=>n.type==='host');
+  $('#hosts').innerHTML = hosts.length
+    ? hosts.map(h=>`<span class="tag">${h.label} -> ${h.ip}</span>`).join('')
+    : '<span style="color:var(--dim);font-size:12px">No subdomain candidates resolved.</span>';
+  const ports=r.nodes.filter(n=>n.type==='port');
+  $('#ports').innerHTML = ports.map(p=>`<span class="tag" style="color:${p.state==='open'?'var(--lime)':'var(--dim)'}">${p.label} ${p.state}</span>`).join('');
+}
+$('#run').onclick=run;
+$('#report').onclick=()=>window.open('/api/report');
+run();
+</script>
+</body>
+</html>
