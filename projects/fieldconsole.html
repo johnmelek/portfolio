@@ -5,68 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FieldConsole, John Melek</title>
 <meta name="description" content="FieldConsole, a live fleet ops console by John Melek. Deploy a site, watch status flip over WebSocket, tail the log.">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>body{--accent:#39ff14;--accent-2:#9dff7a}</style>
 </head>
 <body>
-<main class="main">
-  <div class="wrap">
-    <section class="pj-hero" data-sec="projects">
-      <a class="back" href="../projects.html">← THE SELECTED SET</a>
-      <div class="idx">TOOL 02 / 06</div>
-      <h1>FIELDCONSOLE</h1>
-      <div class="sub">Live fleet ops console</div>
-      <p class="desc">A WebSocket-driven console for managing remote site deployments. Each site in your fleet has a live status. Hit Deploy and watch it flip from deploying to healthy in real time, with a streaming log tail. The thing you leave open on the second monitor during a rollout.</p>
-    </section>
+<main>
+  <section class="pj">
+    <a class="back" href="../projects.html">← THE SELECTED SET</a>
+    <div class="idx">TOOL 02 / 06</div>
+    <h1>FieldConsole</h1>
+    <div class="sub">Live fleet ops console</div>
+    <p class="desc">A WebSocket-driven console for managing remote site deployments. Each site in your fleet has a live status. Hit Deploy and watch it flip from deploying to healthy in real time, with a streaming log tail. The thing you leave open on the second monitor during a rollout.</p>
+  </section>
 
+  <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/fieldconsole.png" alt="FieldConsole showing eight sites with live deploy status">
       <div class="cap">Live view. Eight sites, each with its own status and Deploy control. The log tail streams as the rollout progresses. Status updates arrive over WebSocket, no refresh.</div>
     </div>
-
-    <section class="sec rv">
-      <div class="pj-grid">
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>WHAT IT DOES</h4>
-            <div class="kv"><span>Fleet</span><span>8 seeded sites</span></div>
-            <div class="kv"><span>Transport</span><span>WebSocket, live</span></div>
-            <div class="kv"><span>Actions</span><span>Deploy per site</span></div>
-            <div class="kv"><span>Log</span><span>streaming tail</span></div>
-            <div class="kv"><span>State</span><span>healthy / down / deploying</span></div>
-          </div>
-          <div class="pj-card">
-            <h4>STACK</h4>
-            <div class="stackline">
-              <span class="s"><b>Node</b></span>
-              <span class="s"><b>Express</b></span>
-              <span class="s">ws</span>
-            </div>
-          </div>
+    <div class="pj-grid">
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>WHAT IT DOES</h4>
+          <div class="kv"><span>Fleet</span><span>8 seeded sites</span></div>
+          <div class="kv"><span>Transport</span><span>WebSocket, live</span></div>
+          <div class="kv"><span>Actions</span><span>Deploy per site</span></div>
+          <div class="kv"><span>Log</span><span>streaming tail</span></div>
+          <div class="kv"><span>State</span><span>healthy / down / deploying</span></div>
         </div>
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>PRACTICAL USE</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">One screen shows every location during a rollout. You act on any site without a page refresh, and the whole room sees the same truth: what is green, what is still deploying, what went down.</p>
-            <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/fieldconsole" style="color:var(--signal)">SOURCE REPO →</a></span>
-              <span>runs offline</span><span>no key</span>
-            </div>
-          </div>
-          <div class="pj-card">
-            <h4>FIELD ORIGIN</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">Stands in for the deploy consoles used across multi-site rollouts, where one screen has to show every location's state and let you act without losing the room.</p>
-          </div>
+        <div class="pj-card">
+          <h4>STACK</h4>
+          <div class="stackline"><span class="s"><b>Node</b></span><span class="s"><b>Express</b></span><span class="s">ws</span></div>
         </div>
       </div>
-    </section>
-
-    <footer class="foot">
-      <div class="big">Next: <a href="quoteforge.html">QuoteForge →</a></div>
-      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
-    </footer>
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>PRACTICAL USE</h4>
+          <p>One screen shows every location during a rollout. You act on any site without a page refresh, and the whole room sees the same truth: what is green, what is still deploying, what went down.</p>
+          <div class="pj-tags"><span><a href="https://github.com/johnmelek/fieldconsole">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
+        </div>
+        <div class="pj-card">
+          <h4>FIELD ORIGIN</h4>
+          <p>Stands in for the deploy consoles used across multi-site rollouts, where one screen has to show every location's state and let you act without losing the room.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer class="foot">
+    <div class="big">Next: <a href="quoteforge.html">QuoteForge →</a></div>
+    <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+  </footer>
 </main>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/nav.js?v=3"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

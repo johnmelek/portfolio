@@ -5,68 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AtlasDeploy, John Melek</title>
 <meta name="description" content="AtlasDeploy, a wave deployment orchestrator by John Melek. Rolls a release across sites in waves with real steps and rollback.">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>body{--accent:#ff6a00;--accent-2:#ffae66}</style>
 </head>
 <body>
-<main class="main">
-  <div class="wrap">
-    <section class="pj-hero" data-sec="projects">
-      <a class="back" href="../projects.html">← THE SELECTED SET</a>
-      <div class="idx">TOOL 06 / 06</div>
-      <h1>ATLASDEPLOY</h1>
-      <div class="sub">Wave deployment orchestrator</div>
-      <p class="desc">You need to push a release across many locations without taking them all down at once. AtlasDeploy runs the rollout in waves, executes a real but safe step plan per site, streams live progress, and supports one-click rollback. Every shell step is allowlisted, so nothing destructive can run.</p>
-    </section>
+<main>
+  <section class="pj">
+    <a class="back" href="../projects.html">← THE SELECTED SET</a>
+    <div class="idx">TOOL 06 / 06</div>
+    <h1>AtlasDeploy</h1>
+    <div class="sub">Wave deployment orchestrator</div>
+    <p class="desc">You need to push a release across many locations without taking them all down at once. AtlasDeploy runs the rollout in waves, executes a real but safe step plan per site, streams live progress, and supports one-click rollback. Every shell step is allowlisted, so nothing destructive can run.</p>
+  </section>
 
+  <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/atlasdeploy.png" alt="AtlasDeploy running a wave rollout across eight sites with a live log">
       <div class="cap">Live view. AtlasDeploy running the rollout in three waves across eight sites. The log streams each step as it happens, and one click rolls every completed site back in reverse order.</div>
     </div>
-
-    <section class="sec rv">
-      <div class="pj-grid">
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>WHAT IT DOES</h4>
-            <div class="kv"><span>Sites</span><span>8, in 3 waves</span></div>
-            <div class="kv"><span>Steps</span><span>allowlisted, real</span></div>
-            <div class="kv"><span>Stream</span><span>Server-Sent Events</span></div>
-            <div class="kv"><span>Rollback</span><span>one-click, reverse</span></div>
-            <div class="kv"><span>Demo</span><span>8/8 deployed, rolled back</span></div>
-          </div>
-          <div class="pj-card">
-            <h4>STACK</h4>
-            <div class="stackline">
-              <span class="s"><b>Python</b> 3.11</span>
-              <span class="s"><b>FastAPI</b></span>
-              <span class="s">asyncio</span>
-            </div>
-          </div>
+    <div class="pj-grid">
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>WHAT IT DOES</h4>
+          <div class="kv"><span>Sites</span><span>8, in 3 waves</span></div>
+          <div class="kv"><span>Steps</span><span>allowlisted, real</span></div>
+          <div class="kv"><span>Stream</span><span>Server-Sent Events</span></div>
+          <div class="kv"><span>Rollback</span><span>one-click, reverse</span></div>
+          <div class="kv"><span>Demo</span><span>8/8 deployed, rolled back</span></div>
         </div>
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>PRACTICAL USE</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy makes the wave sequence the default: validate one wave, watch it go green, move to the next. If something breaks, roll back everything that completed.</p>
-            <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/atlasdeploy" style="color:var(--signal)">SOURCE REPO →</a></span>
-              <span>safe by default</span><span>no key</span>
-            </div>
-          </div>
-          <div class="pj-card">
-            <h4>SAFETY</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">The step runner rejects any binary not on the allowlist. There is no shell, no redirects, no path to run an arbitrary command. Swap in your own safe steps for a real rollout.</p>
-          </div>
+        <div class="pj-card">
+          <h4>STACK</h4>
+          <div class="stackline"><span class="s"><b>Python</b> 3.11</span><span class="s"><b>FastAPI</b></span><span class="s">asyncio</span></div>
         </div>
       </div>
-    </section>
-
-    <footer class="foot">
-      <div class="big">Back to <a href="../projects.html">the set →</a></div>
-      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
-    </footer>
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>PRACTICAL USE</h4>
+          <p>A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy makes the wave sequence the default: validate one wave, watch it go green, move to the next. If something breaks, roll back everything that completed.</p>
+          <div class="pj-tags"><span><a href="https://github.com/johnmelek/atlasdeploy">SOURCE REPO →</a></span><span>safe by default</span><span>no key</span></div>
+        </div>
+        <div class="pj-card">
+          <h4>SAFETY</h4>
+          <p>The step runner rejects any binary not on the allowlist. There is no shell, no redirects, no path to run an arbitrary command. Swap in your own safe steps for a real rollout.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer class="foot">
+    <div class="big">Back to <a href="../projects.html">the set →</a></div>
+    <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+  </footer>
 </main>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/nav.js?v=3"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

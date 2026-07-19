@@ -5,68 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ReconPlanner, John Melek</title>
 <meta name="description" content="ReconPlanner, a scoped recon and surface map by John Melek. Passive DNS for declared domains, safe localhost scan, graph.">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>body{--accent:#7CFC00;--accent-2:#bfff7c}</style>
 </head>
 <body>
-<main class="main">
-  <div class="wrap">
-    <section class="pj-hero" data-sec="projects">
-      <a class="back" href="../projects.html">← THE SELECTED SET</a>
-      <div class="idx">TOOL 04 / 06</div>
-      <h1>RECONPLANNER</h1>
-      <div class="sub">Scoped recon and surface map</div>
-      <p class="desc">Before you assess a client's external surface, you need a plan and a declared scope. ReconPlanner reads a scope file, enumerates subdomain candidates with passive DNS lookups, runs a safe port scan against localhost, and renders the result as an attack-surface graph plus a markdown report.</p>
-    </section>
+<main>
+  <section class="pj">
+    <a class="back" href="../projects.html">← THE SELECTED SET</a>
+    <div class="idx">TOOL 04 / 06</div>
+    <h1>ReconPlanner</h1>
+    <div class="sub">Scoped recon and surface map</div>
+    <p class="desc">Before you assess a client's external surface, you need a plan and a declared scope. ReconPlanner reads a scope file, enumerates subdomain candidates with passive DNS lookups, runs a safe port scan against localhost, and renders the result as an attack-surface graph plus a markdown report.</p>
+  </section>
 
+  <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/recon.png" alt="ReconPlanner attack-surface graph with resolved hosts and port scan">
       <div class="cap">Live view. The attack-surface graph: declared domains resolve to hosts, the localhost hub shows open and closed ports, and the resolved-hosts panel lists what passive DNS returned.</div>
     </div>
-
-    <section class="sec rv">
-      <div class="pj-grid">
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>WHAT IT DOES</h4>
-            <div class="kv"><span>Scope</span><span>declared domains</span></div>
-            <div class="kv"><span>Enumeration</span><span>passive DNS</span></div>
-            <div class="kv"><span>Scan</span><span>localhost only</span></div>
-            <div class="kv"><span>Output</span><span>SVG graph + report</span></div>
-            <div class="kv"><span>Dependencies</span><span>none, stdlib</span></div>
-          </div>
-          <div class="pj-card">
-            <h4>STACK</h4>
-            <div class="stackline">
-              <span class="s"><b>Python</b> 3.11</span>
-              <span class="s">stdlib</span>
-              <span class="s">socket</span>
-            </div>
-          </div>
+    <div class="pj-grid">
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>WHAT IT DOES</h4>
+          <div class="kv"><span>Scope</span><span>declared domains</span></div>
+          <div class="kv"><span>Enumeration</span><span>passive DNS</span></div>
+          <div class="kv"><span>Scan</span><span>localhost only</span></div>
+          <div class="kv"><span>Output</span><span>SVG graph + report</span></div>
+          <div class="kv"><span>Dependencies</span><span>none, stdlib</span></div>
         </div>
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>PRACTICAL USE</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">It turns "what is exposed here" into a picture a non-technical stakeholder can read. This is the planning artifact you bring to the table before any testing starts.</p>
-            <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/recon" style="color:var(--signal)">SOURCE REPO →</a></span>
-              <span>local-only scan</span><span>no key</span>
-            </div>
-          </div>
-          <div class="pj-card">
-            <h4>SAFETY MODEL</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">Active scanning targets 127.0.0.1 only. DNS runs passive lookups for declared domains. It never brute-forces external ranges or scans hosts you do not control. Point it at systems you have permission to test.</p>
-          </div>
+        <div class="pj-card">
+          <h4>STACK</h4>
+          <div class="stackline"><span class="s"><b>Python</b> 3.11</span><span class="s">stdlib</span><span class="s">socket</span></div>
         </div>
       </div>
-    </section>
-
-    <footer class="foot">
-      <div class="big">Next: <a href="pulse.html">Pulse →</a></div>
-      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
-    </footer>
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>PRACTICAL USE</h4>
+          <p>It turns "what is exposed here" into a picture a non-technical stakeholder can read. This is the planning artifact you bring to the table before any testing starts.</p>
+          <div class="pj-tags"><span><a href="https://github.com/johnmelek/recon">SOURCE REPO →</a></span><span>local-only scan</span><span>no key</span></div>
+        </div>
+        <div class="pj-card">
+          <h4>SAFETY MODEL</h4>
+          <p>Active scanning targets 127.0.0.1 only. DNS runs passive lookups for declared domains. It never brute-forces external ranges or scans hosts you do not control. Point it at systems you have permission to test.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer class="foot">
+    <div class="big">Next: <a href="pulse.html">Pulse →</a></div>
+    <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+  </footer>
 </main>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/nav.js?v=3"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

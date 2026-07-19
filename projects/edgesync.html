@@ -5,70 +5,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EdgeSync, John Melek</title>
 <meta name="description" content="EdgeSync, an on-site data reconciliation engine by John Melek. Matches records from CSV, REST JSON, and legacy exports by key, surfaces conflicts.">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>body{--accent:#2e6bff;--accent-2:#6ea8ff}</style>
 </head>
 <body>
-<main class="main">
-  <div class="wrap">
+<main>
+  <section class="pj">
+    <a class="back" href="../projects.html">← THE SELECTED SET</a>
+    <div class="idx">TOOL 01 / 06</div>
+    <h1>EdgeSync</h1>
+    <div class="sub">On-site data reconciliation engine</div>
+    <p class="desc">Walk into a customer site. Their customer data lives in three places that do not agree: a CSV export, a REST JSON endpoint, and a legacy fixed-width dump. EdgeSync ingests all three, reconciles them by key, and surfaces every field-level conflict with proof. It emits a clean unified dataset and a downloadable CSV through a live console.</p>
+  </section>
 
-    <section class="pj-hero" data-sec="projects">
-      <a class="back" href="../projects.html">← THE SELECTED SET</a>
-      <div class="idx">TOOL 01 / 06</div>
-      <h1>EDGESYNC</h1>
-      <div class="sub">On-site data reconciliation engine</div>
-      <p class="desc">Walk into a customer site. Their customer data lives in three places that do not agree: a CSV export, a REST JSON endpoint, and a legacy fixed-width dump. EdgeSync ingests all three, reconciles them by key, and surfaces every field-level conflict with proof. It emits a clean unified dataset and a downloadable CSV through a live console.</p>
-    </section>
-
+  <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/edgesync.png" alt="EdgeSync running, showing the conflicts table across three data sources">
       <div class="cap">Live view. EdgeSync reconciling 12 records across CSV, REST, and legacy sources. Four conflicts surfaced with the exact value each source holds.</div>
     </div>
 
-    <section class="sec rv">
-      <div class="pj-grid">
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>WHAT IT DOES</h4>
-            <div class="kv"><span>Sources</span><span>CSV · REST · legacy</span></div>
-            <div class="kv"><span>Match key</span><span>record ID</span></div>
-            <div class="kv"><span>Conflict view</span><span>field-level, per source</span></div>
-            <div class="kv"><span>Output</span><span>unified JSON + CSV</span></div>
-            <div class="kv"><span>Demo data</span><span>12 records, 4 conflicts</span></div>
-          </div>
-          <div class="pj-card">
-            <h4>STACK</h4>
-            <div class="stackline">
-              <span class="s"><b>Python</b> 3.11</span>
-              <span class="s"><b>FastAPI</b></span>
-              <span class="s">Uvicorn</span>
-            </div>
-          </div>
+    <div class="pj-grid">
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>WHAT IT DOES</h4>
+          <div class="kv"><span>Sources</span><span>CSV · REST · legacy</span></div>
+          <div class="kv"><span>Match key</span><span>record ID</span></div>
+          <div class="kv"><span>Conflict view</span><span>field-level, per source</span></div>
+          <div class="kv"><span>Output</span><span>unified JSON + CSV</span></div>
+          <div class="kv"><span>Demo data</span><span>12 records, 4 conflicts</span></div>
         </div>
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>PRACTICAL USE</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">Point it at the three exports a client already has. Within seconds it shows you exactly where the systems disagree, record by record. The team decides which value wins with proof in front of them, instead of trusting one source blindly.</p>
-            <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/edgesync" style="color:var(--signal)">SOURCE REPO →</a></span>
-              <span>runs offline</span><span>no key</span>
-            </div>
-          </div>
-          <div class="pj-card">
-            <h4>FIELD ORIGIN</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">Built from the automotive recovery engagement: 1,830 records reconciled across 12 dealerships. The demo dataset is sanitized, but the logic is the same one that matched records by ID with a 100% rate.</p>
-          </div>
+        <div class="pj-card">
+          <h4>STACK</h4>
+          <div class="stackline"><span class="s"><b>Python</b> 3.11</span><span class="s"><b>FastAPI</b></span><span class="s">Uvicorn</span></div>
         </div>
       </div>
-    </section>
-
-    <footer class="foot">
-      <div class="big">Next: <a href="fieldconsole.html">FieldConsole →</a></div>
-      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
-    </footer>
-
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>PRACTICAL USE</h4>
+          <p>Point it at the three exports a client already has. Within seconds it shows you exactly where the systems disagree, record by record. The team decides which value wins with proof in front of them, instead of trusting one source blindly.</p>
+          <div class="pj-tags"><span><a href="https://github.com/johnmelek/edgesync">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
+        </div>
+        <div class="pj-card">
+          <h4>FIELD ORIGIN</h4>
+          <p>Built from the automotive recovery engagement: 1,830 records reconciled across 12 dealerships. The demo dataset is sanitized, but the logic is the same one that matched records by ID with a 100% rate.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer class="foot">
+    <div class="big">Next: <a href="atlasdeploy.html">AtlasDeploy →</a></div>
+    <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+  </footer>
 </main>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/nav.js?v=3"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>

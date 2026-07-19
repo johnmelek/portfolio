@@ -5,69 +5,60 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pulse, John Melek</title>
 <meta name="description" content="Pulse, a client-site uptime monitor by John Melek. Response time, TLS cert expiry, SSE live status, sparklines.">
-<link rel="stylesheet" href="../css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=3">
+<style>body{--accent:#00e5ff;--accent-2:#7af1ff}</style>
 </head>
 <body>
-<main class="main">
-  <div class="wrap">
-    <section class="pj-hero" data-sec="projects">
-      <a class="back" href="../projects.html">← THE SELECTED SET</a>
-      <div class="idx">TOOL 05 / 06</div>
-      <h1>PULSE</h1>
-      <div class="sub">Client-site uptime monitor</div>
-      <p class="desc">You leave it running at the customer's office. It polls a list of endpoints, tracks HTTP status, response time, and TLS certificate expiry, streams live status over SSE, and draws response-time sparklines on a canvas. History is appended to a JSONL file, so there is no database to babysit.</p>
-    </section>
+<main>
+  <section class="pj">
+    <a class="back" href="../projects.html">← THE SELECTED SET</a>
+    <div class="idx">TOOL 05 / 06</div>
+    <h1>Pulse</h1>
+    <div class="sub">Client-site uptime monitor</div>
+    <p class="desc">You leave it running at the customer's office. It polls a list of endpoints, tracks HTTP status, response time, and TLS certificate expiry, streams live status over SSE, and draws response-time sparklines on a canvas. History is appended to a JSONL file, so there is no database to babysit.</p>
+  </section>
 
+  <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/pulse.png" alt="Pulse monitoring endpoints with up/down status and response-time sparklines">
       <div class="cap">Live view. Each endpoint reports up or down, response time in milliseconds, and TLS cert expiry in days. The green card draws a live response-time sparkline. The red cards show what an outage looks like at a glance.</div>
     </div>
-
-    <section class="sec rv">
-      <div class="pj-grid">
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>WHAT IT DOES</h4>
-            <div class="kv"><span>Probe</span><span>HTTP / HTTPS</span></div>
-            <div class="kv"><span>Metrics</span><span>status · ms · cert</span></div>
-            <div class="kv"><span>Stream</span><span>SSE live</span></div>
-            <div class="kv"><span>History</span><span>JSONL, no DB</span></div>
-            <div class="kv"><span>Demo</span><span>3 endpoints</span></div>
-          </div>
-          <div class="pj-card">
-            <h4>STACK</h4>
-            <div class="stackline">
-              <span class="s"><b>Node</b></span>
-              <span class="s"><b>Express</b></span>
-              <span class="s">SSE</span>
-              <span class="s">canvas</span>
-            </div>
-          </div>
+    <div class="pj-grid">
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>WHAT IT DOES</h4>
+          <div class="kv"><span>Probe</span><span>HTTP / HTTPS</span></div>
+          <div class="kv"><span>Metrics</span><span>status · ms · cert</span></div>
+          <div class="kv"><span>Stream</span><span>SSE live</span></div>
+          <div class="kv"><span>History</span><span>JSONL, no DB</span></div>
+          <div class="kv"><span>Demo</span><span>3 endpoints</span></div>
         </div>
-        <div>
-          <div class="pj-card" style="margin-bottom:20px">
-            <h4>PRACTICAL USE</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.7">After you deploy something at a client site, someone needs to know when it stops answering. Pulse is a small monitor you can leave behind: open the page, see green or red, spot a cert about to expire before it does.</p>
-            <div class="pj-tags" style="margin-top:14px">
-              <span><a href="https://github.com/johnmelek/pulse" style="color:var(--signal)">SOURCE REPO →</a></span>
-              <span>runs offline</span><span>no key</span>
-            </div>
-          </div>
-          <div class="pj-card">
-            <h4>FIELD ORIGIN</h4>
-            <p style="color:var(--ink-2);font-size:13.5px;line-height:1.65">The "is it still up" question, answered without a dashboard login. Leave it on a screen in the office and the team has the answer.</p>
-          </div>
+        <div class="pj-card">
+          <h4>STACK</h4>
+          <div class="stackline"><span class="s"><b>Node</b></span><span class="s"><b>Express</b></span><span class="s">SSE</span><span class="s">canvas</span></div>
         </div>
       </div>
-    </section>
-
-    <footer class="foot">
-      <div class="big">Next: <a href="atlasdeploy.html">AtlasDeploy →</a></div>
-      <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
-    </footer>
+      <div>
+        <div class="pj-card" style="margin-bottom:20px">
+          <h4>PRACTICAL USE</h4>
+          <p>After you deploy something at a client site, someone needs to know when it stops answering. Pulse is a small monitor you can leave behind: open the page, see green or red, spot a cert about to expire before it does.</p>
+          <div class="pj-tags"><span><a href="https://github.com/johnmelek/pulse">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
+        </div>
+        <div class="pj-card">
+          <h4>FIELD ORIGIN</h4>
+          <p>The "is it still up" question, answered without a dashboard login. Leave it on a screen in the office and the team has the answer.</p>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <footer class="foot">
+    <div class="big">Next: <a href="atlasdeploy.html">AtlasDeploy →</a></div>
+    <div class="meta">John Melek · Forward Deploy Engineer<br>john.melekdls7@gmail.com · github.com/johnmelek</div>
+  </footer>
 </main>
-<script src="../js/nav.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/nav.js?v=3"></script>
+<script src="../js/main.js?v=3"></script>
 </body>
 </html>
