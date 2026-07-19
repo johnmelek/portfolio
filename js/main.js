@@ -3,6 +3,7 @@
    Custom cursor · marquee · magnetic · scramble · spotlight · reveal
    ============================================================ */
 (() => {
+  document.documentElement.classList.add('js');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = window.matchMedia('(min-width:821px)').matches;
 
@@ -107,10 +108,17 @@
   }
 
   /* ---------- REVEAL ---------- */
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  function revealAll(){ document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')); }
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+    // Fallback: if something prevents the observer from firing, reveal anyway.
+    setTimeout(revealAll, 1500);
+  } else {
+    revealAll();
+  }
 
   /* ---------- COUNT-UP NUMBERS ---------- */
   const cio = new IntersectionObserver((entries) => {

@@ -251,10 +251,10 @@ footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);f
 .foot-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
 
 /* ---------- REVEAL ---------- */
-.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);will-change:transform}
-.reveal.in{opacity:1;transform:none}
-.reveal.clip{clip-path:inset(0 100% 0 0);transform:none;transition:clip-path .9s cubic-bezier(.7,0,.2,1),opacity .6s}
-.reveal.clip.in{clip-path:inset(0 0 0 0)}
+.js .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.clip{clip-path:inset(0 100% 0 0);transform:none;transition:clip-path .9s cubic-bezier(.7,0,.2,1),opacity .6s}
+.js .reveal.clip.in{clip-path:inset(0 0 0 0)}
 
 /* ---------- MODAL (live preview) ---------- */
 .modal{position:fixed;inset:0;z-index:90;background:rgba(5,5,6,.92);display:none;align-items:center;justify-content:center;padding:30px}
