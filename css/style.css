@@ -86,7 +86,7 @@ body::after {
 .photo-glitch { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, rgba(46,107,255,.5), rgba(255,46,154,.5), rgba(46,107,255,.5)); background-size: 200% 100%; }
 .photo-frame:hover .photo-glitch { opacity: .35; animation: glitch .5s steps(2) infinite; background-position: 100% 0; }
 .photo-frame:hover img { filter: grayscale(0) contrast(1.08); transform: scale(1.03); }
-.photo-tag { position: absolute; bottom: -14px; left: -14px; background: var(--accent); color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; font-weight: 600; }
+.photo-tag { position: absolute; bottom: 12px; left: 12px; background: var(--accent); color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; font-weight: 600; }
 .hero .cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
 .btn { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; padding: 15px 26px;
   border: 1.5px solid var(--ink); background: transparent; color: var(--ink); transition: all .22s; }
