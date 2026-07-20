@@ -384,13 +384,13 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
 /* brand page */
 .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
 .brand-card { border: 1.5px solid var(--line); padding: 24px; background: var(--ink); }
-.brand-card h3 { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 18px 0 8px; color: var(--ink); }
-.brand-card p { font-size: 14px; color: var(--ink-2); line-height: 1.6; }
-.brand-logo img { width: 120px; height: 120px; border: 1px solid var(--line); }
+.brand-card h3 { font-family: var(--mono); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; margin: 18px 0 8px; color: #0a0a0b; }
+.brand-card p { font-size: 14px; color: #2b2b2b; line-height: 1.6; }
+.brand-logo img { width: 120px; height: 120px; border: 1px solid rgba(10,10,11,.2); }
 .swatches { display: flex; gap: 8px; }
-.swatches span { width: 44px; height: 44px; border: 1px solid var(--line); }
-.type-show { font-family: var(--disp); font-weight: 800; font-size: 64px; line-height: .9; }
-.type-show span { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: .1em; color: var(--ink-2); }
+.swatches span { width: 44px; height: 44px; border: 1px solid rgba(10,10,11,.25); }
+.type-show { font-family: var(--disp); font-weight: 800; font-size: 64px; line-height: .9; color: #0a0a0b; }
+.type-show span { font-family: var(--mono); font-size: 12px; font-weight: 400; letter-spacing: .1em; color: #555; }
 .brand-rules { list-style: none; margin-top: 20px; max-width: 60ch; }
 .brand-rules li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
 .brand-rules li::before { content: "→ "; color: var(--accent); }
