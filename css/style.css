@@ -68,8 +68,9 @@ body::after {
 
 /* hero */
 .hero { min-height: 100vh; display: grid; grid-template-columns: minmax(0,1.02fr) minmax(0,0.98fr); align-items: stretch; position: relative; }
-.hero .left { display: flex; flex-direction: column; justify-content: center; padding: 150px 4vw 60px 7vw; }
-.hero .photo { display: flex; align-items: center; justify-content: center; padding: 70px 5vw 40px; background: transparent; }
+.hero .left { display: flex; flex-direction: column; justify-content: center; padding: 150px 0 60px 7vw; position: relative; z-index: 3; margin-right: -12vw; }
+.hero .photo { display: flex; align-items: center; justify-content: center; padding: 70px 5vw 40px 0; background: transparent; position: relative; z-index: 1; }
+.hero h1 { position: relative; z-index: 3; margin-right: -12vw; }
 .hero .photo .photo-frame { width: 100%; max-width: 520px; }
 .hero .kick { font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 18px; }
@@ -311,9 +312,9 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
   .hero .photo .photo-frame { max-width: 260px; margin: 0 auto; aspect-ratio: 640 / 961; }
   .photo-frame .photo-tag { bottom: 8px; left: 8px; font-size: 11px; padding: 6px 10px; }
   .photo-frame .ring { inset: -10px; }
-  .hero .left { padding: 22px 7vw 56px; }
+  .hero .left { padding: 22px 7vw 56px; margin-right: 0; }
   .hero .kick { font-size: 11px; margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(38px, 12vw, 74px); line-height: .9; }
+  .hero h1 { font-size: clamp(38px, 12vw, 74px); line-height: .9; margin-right: 0; }
   .hero .sub { font-size: 16px; margin-top: 20px; max-width: none; }
   .hero .cta { gap: 10px; }
   .hero .cta .btn { flex: 1 1 auto; text-align: center; padding: 14px 18px; }
