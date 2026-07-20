@@ -61,7 +61,7 @@
 
   const worlds = {
     edgesync() {
-      ctx.fillStyle = 'rgba(244,241,234,0.06)'; ctx.fillRect(0, 0, W, H);
+      ctx.clearRect(0, 0, W, H);
       ctx.font = '16px JetBrains Mono, monospace'; ctx.fillStyle = accent;
       for (let i = 0; i < 40; i++) {
         const x = (i * 53) % W; const y = (t * (1 + (i % 5)) + i * 80) % H;
