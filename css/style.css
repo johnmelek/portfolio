@@ -304,14 +304,16 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
   .topbar .logo { width: 22px; height: 22px; }
   .menu-btn { padding: 7px 12px; font-size: 11px; }
 
-  /* hero: photo first, then statement */
+  /* hero: photo first, contained, then statement */
   .hero { display: flex; flex-direction: column; height: auto; min-height: 0; }
-  .hero .photo { order: -1; width: 100%; height: auto; padding: 76px 8vw 8px; }
-  .hero .photo .photo-frame { max-width: 300px; }
-  .hero .left { padding: 16px 7vw 56px; }
+  .hero .photo { order: -1; width: 100%; height: auto; padding: 70px 7vw 0; align-items: flex-start; }
+  .hero .photo .photo-frame { max-width: 260px; margin: 0 auto; aspect-ratio: 640 / 961; }
+  .photo-frame .photo-tag { bottom: 8px; left: 8px; font-size: 11px; padding: 6px 10px; }
+  .photo-frame .ring { inset: -10px; }
+  .hero .left { padding: 22px 7vw 56px; }
   .hero .kick { font-size: 11px; margin-bottom: 14px; }
-  .hero h1 { font-size: clamp(40px, 13vw, 80px); line-height: .9; }
-  .hero .sub { font-size: 16px; margin-top: 22px; max-width: none; }
+  .hero h1 { font-size: clamp(38px, 12vw, 74px); line-height: .9; }
+  .hero .sub { font-size: 16px; margin-top: 20px; max-width: none; }
   .hero .cta { gap: 10px; }
   .hero .cta .btn { flex: 1 1 auto; text-align: center; padding: 14px 18px; }
 
