@@ -7,9 +7,11 @@
   // scroll progress bar
   const prog = document.createElement('div'); prog.className = 'progress';
   document.body.appendChild(prog);
+  const topbar = document.querySelector('.topbar');
   const onScroll = () => {
     const h = document.documentElement.scrollHeight - innerHeight;
     prog.style.width = (h > 0 ? (scrollY / h) * 100 : 0) + '%';
+    if (topbar) topbar.classList.toggle('scrolled', scrollY > 40);
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
