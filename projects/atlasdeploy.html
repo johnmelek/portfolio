@@ -7,31 +7,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../css/style.css?v=9">
+<link rel="stylesheet" href="../css/style.css?v=20">
 <style>body{--accent:#ff6a00;--accent-2:#ffae66}</style>
 </head>
 <body class="sk-atlasdeploy" data-world="atlas">
+<div id="loader" aria-hidden="true">
+  <div class="ld-mark">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="6" width="88" height="88" fill="#0a0a0b" stroke="#ff4d2e" stroke-width="3"/>
+      <path d="M30 24 L30 76 L42 76 L42 46 L58 76 L70 76 L50 44 L70 24 L58 24 L42 46 L42 24 Z" fill="#f4f1ea"/>
+      <circle cx="50" cy="78" r="3" fill="#ff4d2e"/>
+    </svg>
+    <span class="ld-ring"></span>
+  </div>
+  <div class="ld-name" data-i18n="loader.name">JOHN MELEK</div>
+  <div class="ld-bar"><i></i></div>
+</div>
+
 <canvas id="world-canvas"></canvas>
 <main>
   <section class="pj">
     <span class="bignum">06</span>
-    <a class="back" href="../projects.html">← THE SELECTED SET</a>
-    <div class="runidx">FILE / 06-ATLASDEPLOY · wave orchestrator</div>
+    <a class="back" href="../projects.html"><span data-i18n="pj.back">← THE SELECTED SET</span></a>
+    <div class="runidx"><span data-i18n="at.runidx">FILE / 06-ATLASDEPLOY · wave orchestrator</span></div>
     <h1 class="display-type">AtlasDeploy</h1>
-    <div class="sub">Wave deployment orchestrator</div>
-    <p class="desc">A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy ships in waves with verified rollback. Hit RUN WAVE to deploy the next wave; nodes light up as they come online. Run it three times to finish, a fourth to reset.</p>
-    <blockquote class="pull">"Twelve sites. Three waves. Zero 3am pages."<small>Verified rollback</small></blockquote>
+    <div class="sub"><span data-i18n="at.sub">Wave deployment orchestrator</span></div>
+    <p class="desc"><span data-i18n="at.desc">A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy ships in waves with verified <span data-i18n="pj.rollback">rollback</span>. Hit RUN WAVE to deploy the next wave; nodes light up as they come online. Run it three times to finish, a fourth to reset.</span></p>
+    <blockquote class="pull"><span data-i18n="at.pull">"Twelve sites. Three waves. Zero 3am pages."</span><small><span data-i18n="at.pulls">Verified rollback</span></small></blockquote>
   </section>
 
   <div class="pj" style="padding-top:0">
     <div class="shot">
-      <span class="live-tag">LIVE APP</span>
+      <span class="live-tag"><span data-i18n="pj.live">LIVE APP</span></span>
       <img src="../assets/shots/atlasdeploy.png" alt="AtlasDeploy running, wave deploy board">
-      <div class="cap">AtlasDeploy orchestrating wave deploys with verified rollback.</div>
+      <div class="cap"><span data-i18n="at.cap">AtlasDeploy orchestrating wave deploys with verified rollback.</span></div>
     </div>
 
     <div class="world-shell" id="x-atlas">
-      <h4>DISPATCH BOARD · run a wave</h4>
+      <h4><span data-i18n="at.h4">DISPATCH BOARD · run a wave</span></h4>
       <div class="atlas-grid">
         <div class="wnode" data-wave="1" data-id="S01"><div class="wv">WAVE 1</div>S01</div>
         <div class="wnode" data-wave="1" data-id="S02"><div class="wv">WAVE 1</div>S02</div>
@@ -46,20 +59,21 @@
         <div class="wnode" data-wave="3" data-id="S11"><div class="wv">WAVE 3</div>S11</div>
         <div class="wnode" data-wave="3" data-id="S12"><div class="wv">WAVE 3</div>S12</div>
       </div>
-      <button class="atlas-go">RUN WAVE →</button>
+      <button class="atlas-go"><span data-i18n="at.go">RUN WAVE →</span></button>
       <div class="atlas-log"></div>
-      <div class="pj-tags"><span><a href="https://github.com/johnmelek/atlasdeploy">SOURCE REPO →</a></span><span>rollback</span><span>no key</span></div>
+      <div class="pj-tags"><span><a href="https://github.com/johnmelek/atlasdeploy"><span data-i18n="pj.source">SOURCE REPO →</span></a></span><span>rollback</span><span><span data-i18n="pj.nokey">no key</span></span></div>
     </div>
   </div>
 
   <footer class="foot">
-    <div class="big">Next: <a href="edgesync.html">EdgeSync →</a></div>
-    <div class="meta">John Melek · Forward Deploy Engineer · AI Manager<br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek</div>
+    <div class="big"><span data-i18n="pj.next">Next:</span> <a href="edgesync.html">EdgeSync →</a></div>
+    <div class="meta"><span data-i18n="f.identity">John Melek · Forward Deploy Engineer · AI Manager</span><br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek</div>
   </footer>
 </main>
-<script src="../js/nav.js?v=9"></script>
-<script src="../js/main.js?v=9"></script>
-<script src="../js/project.js?v=9"></script>
-<script src="../js/motion.js?v=9"></script>
+<script src="../js/i18n.js?v=20"></script>
+  <script src="../js/nav.js?v=20"></script>
+<script src="../js/main.js?v=20"></script>
+<script src="../js/project.js?v=20"></script>
+<script src="../js/motion.js?v=20"></script>
 </body>
 </html>
