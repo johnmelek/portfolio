@@ -13,16 +13,6 @@
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // cursor
-  if (!reduce && matchMedia('(min-width: 821px)').matches) {
-    const c = document.createElement('div'); c.className = 'cur';
-    document.body.appendChild(c);
-    let x = innerWidth/2, y = innerHeight/2, tx = x, ty = y;
-    addEventListener('mousemove', e => { tx = e.clientX; ty = e.clientY; });
-    (function loop(){ x += (tx-x)*.22; y += (ty-y)*.22; c.style.transform = `translate(${x}px,${y}px) translate(-50%,-50%)`; requestAnimationFrame(loop); })();
-    document.addEventListener('mouseover', e => { c.classList.toggle('big', !!e.target.closest('a,button,[data-hover]')); });
-  }
-
   // nav overlay
   const btn = document.querySelector('.menu-btn');
   const ov = document.querySelector('.nav-overlay');
