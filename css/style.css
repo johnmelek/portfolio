@@ -430,6 +430,22 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
 main { position: relative; z-index: 2; }
 .hero, .sec, .pj, .foot, .case, .work, .approach, .fieldlog, .contact { position: relative; z-index: 2; }
 
+/* ===================== CONTACT CHANNELS ===================== */
+.channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
+.chan { display: flex; align-items: center; gap: 16px; padding: 22px 20px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; transition: background .2s, color .2s, transform .2s, border-color .2s; }
+.chan:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; transform: translateY(-3px); }
+.chan .ic { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border: 1.5px solid currentColor; border-radius: 50%; }
+.chan .ic svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+.chan .tx { display: flex; flex-direction: column; line-height: 1.15; }
+.chan .tx .t { font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
+.chan .tx .s { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; opacity: .7; margin-top: 3px; }
+.chan:hover .tx .s { opacity: .85; }
+@media (max-width: 860px) {
+  .channels { grid-template-columns: 1fr; }
+  .chan { padding: 18px 16px; }
+  .chan .ic { width: 30px; height: 30px; flex-basis: 30px; }
+}
+
 /* risograph grain over everything */
 body::after {
   content: ""; position: fixed; inset: 0; z-index: 80; pointer-events: none; opacity: .05;
