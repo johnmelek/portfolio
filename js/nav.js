@@ -14,6 +14,6 @@
     <span class="clk">--:--:-- UTC</span><span class="sig">AVAILABLE</span>
   </div>
   <button class="menu-btn">MENU</button>
-  <div class="nav-overlay">${nav}</div>`;
+  <div class="nav-overlay">${nav}<a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="font-size:clamp(18px,3vw,28px);color:var(--ink-2)"><span class="idx">↗</span>LINKEDIN</a></div>`;
   document.body.insertAdjacentHTML('afterbegin', bar);
 })();
