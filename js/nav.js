@@ -34,7 +34,7 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.2 2.3-2.46 4.73-2.46 5.06 0 6 3.33 6 7.66V24h-5v-7.4c0-1.77-.03-4.05-2.47-4.05-2.47 0-2.85 1.93-2.85 3.92V24h-5V8z"/></svg>
         <span>LinkedIn</span>
       </a>
-      <a href="mailto:john.melekdls7@gmail.com" aria-label="Email">
+      <a href="mailto:john.melek@jmai.run.place" aria-label="Email">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20v16H2V4zm2 2v.4l8 5.2 8-5.2V6H4zm16 2.8V18h-2V9.1l-6 3.9-6-3.9V18H4V8.8l8 5.2 8-5.2z"/></svg>
         <span>Email</span>
       </a>

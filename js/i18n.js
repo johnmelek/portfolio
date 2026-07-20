@@ -94,7 +94,7 @@
     'c.email': { en: 'Email', fr: 'Email', es: 'Email' },
     'c.github': { en: 'GitHub', fr: 'GitHub', es: 'GitHub' },
     'c.lin.sub': { en: 'john-melek-182086256', fr: 'john-melek-182086256', es: 'john-melek-182086256' },
-    'c.mail.sub': { en: 'john.melekdls7@gmail.com', fr: 'john.melekdls7@gmail.com', es: 'john.melekdls7@gmail.com' },
+    'c.mail.sub': { en: 'john.melek@jmai.run.place', fr: 'john.melek@jmai.run.place', es: 'john.melek@jmai.run.place' },
     'c.gh.sub': { en: 'github.com/johnmelek', fr: 'github.com/johnmelek', es: 'github.com/johnmelek' },
     // chrome misc
     'nav.role': { en: '· FORWARD DEPLOY ENGINEER · AI MANAGER', fr: '· INGÉNIEUR DÉPLOIEMENT TERRAIN · IA MANAGER', es: '· INGENIERO DESPLIEGUE TERRENO · IA MANAGER' },
