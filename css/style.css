@@ -200,6 +200,39 @@ body::after {
 /* marquee speed variants */
 .marq.rev .track { animation-direction: reverse; }
 
+/* ===== PER-PROJECT UI/UX SKINS (manifesto build) ===== */
+/* EDGESYNC: dense data table */
+body.sk-edgesync .datagrid{width:100%; border-collapse:collapse; font-family:var(--mono); font-size:13px; margin-top:16px}
+body.sk-edgesync .datagrid th,body.sk-edgesync .datagrid td{border:1px solid var(--line); padding:10px 12px; text-align:left}
+body.sk-edgesync .datagrid th{background:var(--accent); color:#0a0a0b; text-transform:uppercase; letter-spacing:.05em}
+body.sk-edgesync .datagrid .conflict{color:var(--accent); font-weight:700}
+body.sk-edgesync .datagrid tr:nth-child(even){background:rgba(46,107,255,.05)}
+
+/* FIELDCONSOLE: neon HUD */
+body.sk-fieldconsole .hud{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:14px}
+body.sk-fieldconsole .hud .node{font-family:var(--mono); font-size:13px; border:1px solid var(--accent); padding:12px; display:flex; justify-content:space-between; align-items:center}
+body.sk-fieldconsole .hud .node .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); animation:pulse 1.4s infinite}
+body.sk-fieldconsole .hud .node.down .dot{background:var(--accent-2); box-shadow:0 0 10px var(--accent-2)}
+@keyframes pulse{50%{opacity:.3}}
+
+/* QUOTEFORGE: builder wizard */
+body.sk-quoteforge .wizard{display:flex; flex-direction:column; gap:10px; margin-top:14px}
+body.sk-quoteforge .wizard .step{border:1px solid var(--line); padding:14px; font-family:var(--mono); font-size:13px; display:flex; gap:12px; align-items:center}
+body.sk-quoteforge .wizard .step .n{background:var(--accent); color:#0a0a0b; width:26px; height:26px; display:flex; align-items:center; justify-content:center; font-weight:700; flex:none}
+
+/* RECON: blueprint map */
+body.sk-recon .map{position:relative; border:1px solid var(--accent); margin-top:14px; padding:18px; min-height:160px; font-family:var(--mono); font-size:12px}
+body.sk-recon .map .pin{position:absolute; width:12px; height:12px; background:var(--accent); border-radius:50%; box-shadow:0 0 10px var(--accent); transform:translate(-50%,-50%)}
+
+/* PULSE: vital sparkline */
+body.sk-pulse .spark{margin-top:14px; border:1px solid var(--line); padding:14px}
+body.sk-pulse .spark .bar{height:8px; background:var(--accent); margin:5px 0; box-shadow:0 0 8px var(--accent)}
+
+/* ATLASDEPLOY: industrial gantt */
+body.sk-atlasdeploy .gantt{margin-top:14px; display:flex; flex-direction:column; gap:8px; font-family:var(--mono); font-size:12px}
+body.sk-atlasdeploy .gantt .row{display:grid; grid-template-columns:90px 1fr; gap:10px; align-items:center}
+body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shadow:0 0 10px var(--accent)}
+
 @media (max-width: 860px) {
   .hero { flex-direction: column; height: auto; min-height: 0; }
   .hero .photo { flex: none; width: 100%; height: 78vh; order: -1; }

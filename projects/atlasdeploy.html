@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../css/style.css?v=5">
 <style>body{--accent:#ff6a00;--accent-2:#ffae66}</style>
 </head>
-<body>
+<body class="sk-atlasdeploy">
 <main>
   <section class="pj">
     <a class="back" href="../projects.html">← THE SELECTED SET</a>
@@ -41,8 +41,14 @@
       </div>
       <div>
         <div class="pj-card" style="margin-bottom:20px">
-          <h4>PRACTICAL USE</h4>
-          <p>A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy makes the wave sequence the default: validate one wave, watch it go green, move to the next. If something breaks, roll back everything that completed.</p>
+          <h4>ROLLBACK WAVES</h4>
+          <div class="gantt">
+            <div class="row"><span>WAVE 1</span><div class="bar" style="width:30%"></div></div>
+            <div class="row"><span>WAVE 2</span><div class="bar" style="width:55%"></div></div>
+            <div class="row"><span>WAVE 3</span><div class="bar" style="width:80%"></div></div>
+            <div class="row"><span>VERIFY</span><div class="bar" style="width:42%"></div></div>
+            <div class="row"><span>ROLLBACK</span><div class="bar" style="width:90%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2)"></div></div>
+          </div>
           <div class="pj-tags"><span><a href="https://github.com/johnmelek/atlasdeploy">SOURCE REPO →</a></span><span>safe by default</span><span>no key</span></div>
         </div>
         <div class="pj-card">

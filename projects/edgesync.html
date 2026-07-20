@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../css/style.css?v=5">
 <style>body{--accent:#2e6bff;--accent-2:#6ea8ff}</style>
 </head>
-<body>
+<body class="sk-edgesync">
 <main>
   <section class="pj">
     <a class="back" href="../projects.html">← THE SELECTED SET</a>
@@ -42,8 +42,16 @@
       </div>
       <div>
         <div class="pj-card" style="margin-bottom:20px">
-          <h4>PRACTICAL USE</h4>
-          <p>Point it at the three exports a client already has. Within seconds it shows you exactly where the systems disagree, record by record. The team decides which value wins with proof in front of them, instead of trusting one source blindly.</p>
+          <h4>CONFLICT TABLE (DEMO)</h4>
+          <table class="datagrid">
+            <thead><tr><th>ID</th><th>CSV</th><th>REST</th><th>Legacy</th></tr></thead>
+            <tbody>
+              <tr><td>C002</td><td>a@x.com</td><td class="conflict">b@x.com</td><td>a@x.com</td></tr>
+              <tr><td>C003</td><td class="conflict">0611..</td><td>0612..</td><td>0612..</td></tr>
+              <tr><td>C007</td><td>Paris</td><td class="conflict">Lyon</td><td>Paris</td></tr>
+              <tr><td>C011</td><td class="conflict">active</td><td>closed</td><td>active</td></tr>
+            </tbody>
+          </table>
           <div class="pj-tags"><span><a href="https://github.com/johnmelek/edgesync">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
         </div>
         <div class="pj-card">
