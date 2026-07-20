@@ -79,7 +79,8 @@ body::after {
 .hero .sub { max-width: 30ch; margin-top: 28px; font-size: 18px; color: var(--ink-2); line-height: 1.6; }
 .hero .sub b { color: var(--ink); }
 .hero .photo { flex: 0 0 42%; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.photo-frame { position: relative; aspect-ratio: 640 / 961; width: 100%; max-width: 380px; }
+.photo-frame { position: relative; aspect-ratio: 640 / 961; width: 100%; max-width: 380px; overflow: hidden; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-frame .ring { position: absolute; inset: -16px; border: 2px dashed var(--line); }
 .photo-glitch { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, rgba(46,107,255,.5), rgba(255,46,154,.5), rgba(46,107,255,.5)); background-size: 200% 100%; }
 .photo-frame:hover .photo-glitch { opacity: .35; animation: glitch .5s steps(2) infinite; background-position: 100% 0; }
