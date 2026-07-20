@@ -38,11 +38,9 @@
     <button class="menu-btn" data-i18n="nav.menu">MENU</button>
   </header>
   <div class="nav-overlay">
+    <div class="nav-top"><button class="nav-return" data-i18n="nav.return">RETURN</button></div>
     <nav class="nav-links">${nav}</nav>
     <a class="nav-li" href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="font-size:clamp(18px,3vw,28px);color:var(--ink-2)"><span class="idx">↗</span><span data-i18n="nav.linkedin">LINKEDIN</span></a>
-    <div class="nav-foot">
-      <button class="nav-return" data-i18n="nav.return">RETURN</button>
-    </div>
   </div>`;
 
   document.body.insertAdjacentHTML('afterbegin', bar);
