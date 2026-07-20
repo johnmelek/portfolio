@@ -1,61 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FieldConsole, John Melek</title>
-<meta name="description" content="FieldConsole, a fleet ops console by John Melek. Click sites to toggle status, watch the live log.">
+<meta name="description" content="FieldConsole, a fleet ops console. A mission-control panel with a live radar and log.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../css/style.css?v=8">
+<link rel="stylesheet" href="../css/style.css?v=9">
 <style>body{--accent:#39ff14;--accent-2:#9dff7a}</style>
 </head>
-<body class="sk-fieldconsole">
+<body class="sk-fieldconsole" data-world="fieldconsole">
+<canvas id="world-canvas"></canvas>
 <main>
   <section class="pj">
+    <span class="bignum">02</span>
     <a class="back" href="../projects.html">← THE SELECTED SET</a>
-    <div class="idx">TOOL 02 / 06</div>
-    <h1>FieldConsole</h1>
+    <div class="runidx">FILE / 02-FIELDCONSOLE · fleet ops</div>
+    <h1 class="display-type">FieldConsole</h1>
     <div class="sub">Fleet ops console</div>
-    <p class="desc">One screen shows every location during a rollout. Click any site to flip its status; the log records every change. Metrics stream in on their own. This is the panel you leave open on the second monitor while a wave ships.</p>
+    <p class="desc">One screen for every location during a rollout. Click any site to flip its status; the log records the change and metrics stream on their own. This is the panel you leave open on the second monitor while a wave ships.</p>
+    <blockquote class="pull">"Six sites. One panel. Nothing goes dark without someone seeing it."<small>Multi-site rollout</small></blockquote>
   </section>
 
   <div class="pj" style="padding-top:0">
     <div class="shot">
+      <span class="live-tag">LIVE APP</span>
       <img src="../assets/shots/fieldconsole.png" alt="FieldConsole running, fleet status panel with live log">
-      <div class="cap">Live view. FieldConsole fleet panel with WebSocket status and a streaming log tail.</div>
+      <div class="cap">FieldConsole fleet panel with WebSocket status and a streaming log tail.</div>
     </div>
 
-    <div class="pj-grid">
-      <div>
-        <div class="pj-card" style="margin-bottom:20px">
-          <h4>WHAT IT DOES</h4>
-          <div class="kv"><span>Scope</span><span>multi-site fleets</span></div>
-          <div class="kv"><span>Transport</span><span>WebSocket</span></div>
-          <div class="kv"><span>View</span><span>status + live log</span></div>
-          <div class="kv"><span>Demo</span><span>6 sites streaming</span></div>
-        </div>
-        <div class="pj-card">
-          <h4>STACK</h4>
-          <div class="stackline"><span class="s"><b>Node</b> 22</span><span class="s"><b>WS</b></span><span class="s">Express</span></div>
-        </div>
+    <div class="world-shell" id="x-console">
+      <h4>MISSION CONTROL · click a site to toggle</h4>
+      <div class="con-nodes">
+        <button class="node" data-id="01"><span class="dot"></span>SITE-01</button>
+        <button class="node" data-id="02"><span class="dot"></span>SITE-02</button>
+        <button class="node" data-id="03"><span class="dot"></span>SITE-03</button>
+        <button class="node" data-id="04"><span class="dot"></span>SITE-04</button>
+        <button class="node" data-id="05"><span class="dot"></span>SITE-05</button>
+        <button class="node" data-id="06"><span class="dot"></span>SITE-06</button>
       </div>
-      <div>
-        <div class="comp" id="x-console">
-          <h4>FLEET STATUS (DEMO)</h4>
-          <div class="con-nodes">
-            <button class="node" data-id="01"><span class="dot"></span>SITE-01</button>
-            <button class="node" data-id="02"><span class="dot"></span>SITE-02</button>
-            <button class="node" data-id="03"><span class="dot"></span>SITE-03</button>
-            <button class="node" data-id="04"><span class="dot"></span>SITE-04</button>
-            <button class="node" data-id="05"><span class="dot"></span>SITE-05</button>
-            <button class="node" data-id="06"><span class="dot"></span>SITE-06</button>
-          </div>
-          <div class="con-log"></div>
-          <div class="pj-tags" style="margin-top:14px"><span><a href="https://github.com/johnmelek/fieldconsole">SOURCE REPO →</a></span><span>live</span><span>no key</span></div>
-        </div>
-      </div>
+      <div class="con-log"></div>
+      <div class="pj-tags"><span><a href="https://github.com/johnmelek/fieldconsole">SOURCE REPO →</a></span><span>live</span><span>no key</span></div>
     </div>
   </div>
 
@@ -64,8 +50,9 @@
     <div class="meta">John Melek · Forward Deploy Engineer · AI Manager<br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek</div>
   </footer>
 </main>
-<script src="../js/nav.js?v=8"></script>
-<script src="../js/main.js?v=8"></script>
-<script src="../js/project.js?v=8"></script>
+<script src="../js/nav.js?v=9"></script>
+<script src="../js/main.js?v=9"></script>
+<script src="../js/project.js?v=9"></script>
+<script src="../js/motion.js?v=9"></script>
 </body>
 </html>
