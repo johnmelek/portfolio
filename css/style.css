@@ -483,13 +483,10 @@ main { position: relative; z-index: 2; }
 .chan .tx .s { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; opacity: .7; margin-top: 3px; }
 .chan:hover .tx .s { opacity: .85; }
 
-/* colored channel variants (used in footer link row + contact cards) */
-.chan.li { border-color: #2e6bff; color: #2e6bff; }
-.chan.li:hover { background: #2e6bff; border-color: #2e6bff; color: #fff; }
-.chan.gh { border-color: #ff6a00; color: #ff6a00; }
-.chan.gh:hover { background: #ff6a00; border-color: #ff6a00; color: #0a0a0a; }
-.chan.em { border-color: var(--accent); color: var(--accent); }
-.chan.em:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; }
+/* channel cards: single accent colour for a clean, professional look */
+.chan.li, .chan.gh, .chan.em { border-color: var(--accent); color: var(--accent); }
+.chan.li:hover, .chan.gh:hover, .chan.em:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; }
+.chan.li:hover svg, .chan.gh:hover svg, .chan.em:hover svg { fill: #0a0a0a; }
 
 /* footer link-card row: one card per channel, end of every page */
 @media (max-width: 860px) {
