@@ -185,7 +185,13 @@ body::after {
 .foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; flex-basis: 100%; margin-top: 36px; }
 .foot-links .chan { padding: 18px 20px; }
 .foot-links .chan .s { opacity: .8; }
-@media (max-width: 640px) { .foot-links { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .foot-links { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
+  .foot-links .chan { display: flex; align-items: center; gap: 16px; width: 100%; padding: 16px 18px; min-height: 56px; box-sizing: border-box; }
+  .foot-links .chan .ic { width: 32px; height: 32px; flex: 0 0 32px; }
+  .foot-links .chan .tx .t { font-size: 14px; }
+  .foot-links .chan .tx .s { font-size: 12px; }
+}
 
 /* scroll progress */
 .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 96;
@@ -486,9 +492,6 @@ main { position: relative; z-index: 2; }
 .chan.em:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; }
 
 /* footer link-card row: one card per channel, end of every page */
-.foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; flex-basis: 100%; margin-top: 36px; }
-.foot-links .chan { padding: 18px 20px; }
-.foot-links .chan .s { opacity: .8; }
 @media (max-width: 860px) {
   .channels { grid-template-columns: 1fr; }
   .sec .channels { grid-template-columns: 1fr; }
