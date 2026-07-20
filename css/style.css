@@ -66,6 +66,13 @@ body::after {
   line-height: 1.02; letter-spacing: -.03em; color: var(--ink); padding: 6px 0; transition: color .2s, padding-left .3s; }
 .nav-overlay .nav-links a:hover { color: var(--accent); padding-left: 24px; }
 .nav-overlay .nav-li { font-family: var(--mono) !important; font-weight: 600 !important; font-size: clamp(15px,2vw,18px) !important; letter-spacing: .12em; color: var(--ink-2) !important; margin-top: 16px; padding: 6px 0; transition: color .2s; }
+/* social row: LinkedIn / Email / GitHub with logo icons, theme-matched */
+.nav-overlay .nav-social { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+.nav-overlay .nav-social a { display: inline-flex; align-items: center; gap: 9px; padding: 11px 16px;
+  border: 1px solid var(--line); color: var(--ink); text-decoration: none; font-family: var(--mono);
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase; transition: border-color .2s, color .2s, background .2s; }
+.nav-overlay .nav-social a:hover { border-color: var(--accent); color: var(--accent); }
+.nav-overlay .nav-social svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 .nav-overlay .nav-li:hover { color: var(--accent) !important; padding-left: 0; }
 .nav-overlay .idx { font-family: var(--mono); font-size: 12px; color: var(--dim); margin-right: 16px; vertical-align: middle; }
 .nav-overlay .nav-foot { margin-top: 16px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
