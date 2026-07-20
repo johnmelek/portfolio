@@ -136,7 +136,7 @@
   const loop = () => { t += 1; fn(); requestAnimationFrame(loop); };
   loop();
 
-  /* ---------- hero photo: cursor-reactive tilt + floating particles ---------- */
+  /* ---------- hero photo: cursor-reactive tilt + floating particles + spotlight ---------- */
   const cut = document.querySelector('.hero .photo-cut');
   const frame = document.querySelector('.hero .photo-frame');
   if (cut && frame && fine && !reduce) {
@@ -145,13 +145,15 @@
       const r = frame.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - 0.5;
       const py = (e.clientY - r.top) / r.height - 0.5;
+      frame.style.setProperty('--mx2', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      frame.style.setProperty('--my2', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        cut.style.transform = `scale(1.05) translate(${px * 22}px, ${-2 + py * 22}px) rotateY(${px * 12}deg) rotateX(${-py * 12}deg)`;
+        cut.style.transform = `scale(1.07) translate(${px * 26}px, ${-2 + py * 26}px) rotateY(${px * 14}deg) rotateX(${-py * 14}deg)`;
       });
     };
     frame.addEventListener('mousemove', onMove);
-    frame.addEventListener('mouseleave', () => { cut.style.transform = ''; });
+    frame.addEventListener('mouseleave', () => { cut.style.transform = ''; frame.style.setProperty('--mx2', '50%'); frame.style.setProperty('--my2', '50%'); });
   }
   // generate drifting particle dots around the photo
   const pc = document.getElementById('photoParticles');
