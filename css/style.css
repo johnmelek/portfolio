@@ -411,7 +411,7 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
 .brand-rules { list-style: none; margin-top: 20px; max-width: 60ch; }
 .brand-rules li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
 .brand-rules li::before { content: "→ "; color: var(--accent); }
-.pj .back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin: 70px 0 26px; padding: 4px 0; border: none; background: none; cursor: pointer; transition: color .15s, gap .15s; }
+.pj .back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin: 70px 0 26px 7vw; padding: 4px 0; border: none; background: none; cursor: pointer; transition: color .15s, gap .15s; }
 .pj .back::before { content: "←"; color: var(--accent); font-size: 15px; }
 .pj .back:hover { color: var(--accent); gap: 12px; }
 .pj .idx { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: .14em; margin-top: 30px; }
@@ -536,7 +536,7 @@ body::after {
 .lang .sep { width: 1px; height: 14px; background: var(--line); }
 
 /* ===================== BACK BUTTON ===================== */
-.back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin: 70px 0 26px; padding: 4px 0; border: none; background: none; cursor: pointer; transition: color .15s, gap .15s; }
+.back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin: 70px 0 26px 7vw; padding: 4px 0; border: none; background: none; cursor: pointer; transition: color .15s, gap .15s; }
 .back::before { content: "←"; color: var(--accent); font-size: 15px; }
 .back:hover { color: var(--accent); gap: 12px; }
 
