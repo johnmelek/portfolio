@@ -342,10 +342,10 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
   .metric:nth-child(1), .metric:nth-child(2) { border-bottom: 1.5px solid var(--line); }
 
   /* brand grid: stack on phone */
-  .brand-grid { grid-template-columns: 1fr; gap: 14px; }
-  .brand-card { padding: 22px; }
-  .brand-logo img { width: 120px; }
-  .type-show { font-size: 52px; }
+  .sec .brand-grid { grid-template-columns: 1fr; gap: 14px; }
+  .brand-card { padding: 22px; min-width: 0; }
+  .brand-logo img { width: 110px; max-width: 100%; height: auto; }
+  .type-show { font-size: clamp(40px, 13vw, 56px); }
   .brand-rules { font-size: 14px; }
 
   /* approach + everything single column */
