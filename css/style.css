@@ -90,13 +90,27 @@ body::after {
 .hero .sub { max-width: 30ch; margin-top: 28px; font-size: 18px; color: var(--ink-2); line-height: 1.6; }
 .hero .sub b { color: var(--ink); }
 .hero .photo { flex: 0 0 42%; display: flex; align-items: center; justify-content: center; padding: 20px; }
-.photo-frame { position: relative; aspect-ratio: 640 / 961; width: 100%; max-width: 380px; overflow: hidden; }
+.photo-frame { position: relative; aspect-ratio: 640 / 961; width: 100%; max-width: 380px; overflow: visible; isolation: isolate; }
 .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* transparent cutout of John, floating above the frame background */
+.photo-frame .photo-cut { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; z-index: 3; pointer-events: none; filter: drop-shadow(0 24px 48px rgba(0,0,0,.55)); transition: transform .5s cubic-bezier(.2,.8,.2,1); will-change: transform; }
 .photo-frame .ring { position: absolute; inset: -16px; border: 2px dashed var(--line); }
-.photo-glitch { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, rgba(46,107,255,.5), rgba(255,46,154,.5), rgba(46,107,255,.5)); background-size: 200% 100%; }
+/* orbit rings around the subject */
+.photo-orbit { position: absolute; inset: -6%; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent); opacity: .5; pointer-events: none; z-index: 2; animation: orbitSpin 18s linear infinite; }
+.photo-orbit.b { inset: 8%; border-style: dashed; border-color: color-mix(in srgb, var(--accent) 30%, transparent); animation-duration: 26s; animation-direction: reverse; }
+.photo-orbit.c { inset: 18%; border-color: color-mix(in srgb, #2e6bff 32%, transparent); animation-duration: 34s; }
+/* particle dots drifting around the image */
+.photo-particles { position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .8; }
+.photo-particles i { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); animation: floatDot 7s ease-in-out infinite; }
+.photo-glitch { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, rgba(46,107,255,.5), rgba(255,46,154,.5), rgba(46,107,255,.5)); background-size: 200% 100%; z-index: 4; }
 .photo-frame:hover .photo-glitch { opacity: .35; animation: glitch .5s steps(2) infinite; background-position: 100% 0; }
-.photo-frame:hover img { filter: grayscale(0) contrast(1.08); transform: scale(1.03); }
-.photo-tag { position: absolute; bottom: 12px; left: 12px; background: var(--accent); color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; font-weight: 600; }
+/* cursor-reactive: image tilts toward the pointer, rings speed up */
+.photo-frame:hover .photo-cut { transform: scale(1.05) translateY(-2%); }
+.photo-frame:hover .photo-orbit { animation-duration: 5s; }
+.photo-frame:hover .photo-orbit.b { animation-duration: 8s; }
+.photo-frame:hover .photo-orbit.c { animation-duration: 11s; }
+.photo-frame:hover .photo-particles i { animation-duration: 3s; }
+.photo-tag { position: absolute; bottom: 12px; left: 12px; background: var(--accent); color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; font-weight: 600; z-index: 5; }
 .hero .cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
 .btn { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; padding: 15px 26px;
   border: 1.5px solid var(--ink); background: transparent; color: var(--ink); transition: all .22s; }
@@ -181,16 +195,15 @@ body::after {
 .foot .big a { color: var(--accent); }
 .foot .meta { font-family: var(--mono); font-size: 12px; color: var(--dim); text-align: right; line-height: 1.9; }
 
-/* footer social card row (static .foot-links: LinkedIn blue, GitHub orange, Email red) */
+/* footer social card row (static .foot-links: logo icons, name on hover) */
 .foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; flex-basis: 100%; margin-top: 36px; }
-.foot-links .chan { padding: 18px 20px; }
+.foot-links .chan { justify-self: start; }
 .foot-links .chan .s { opacity: .8; }
 @media (max-width: 640px) {
   .foot-links { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; }
-  .foot-links .chan { display: flex; align-items: center; gap: 16px; width: 100%; padding: 16px 18px; min-height: 56px; box-sizing: border-box; }
-  .foot-links .chan .ic { width: 32px; height: 32px; flex: 0 0 32px; }
-  .foot-links .chan .tx .t { font-size: 14px; }
-  .foot-links .chan .tx .s { font-size: 12px; }
+  .foot-links .chan { width: 54px; height: 54px; padding: 0; }
+  .foot-links .chan:hover { width: 100%; }
+  .foot-links .chan .ic { width: 50px; height: 50px; flex: 0 0 50px; }
 }
 
 /* scroll progress */
@@ -235,6 +248,12 @@ body.sk-fieldconsole .hud .node{font-family:var(--mono); font-size:13px; border:
 body.sk-fieldconsole .hud .node .dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 10px var(--accent); animation:pulse 1.4s infinite}
 body.sk-fieldconsole .hud .node.down .dot{background:var(--accent-2); box-shadow:0 0 10px var(--accent-2)}
 @keyframes pulse{50%{opacity:.3}}
+/* hero photo orbit + particle motion */
+@keyframes orbitSpin { to { transform: rotate(360deg); } }
+@keyframes floatDot {
+  0%,100% { transform: translateY(0) scale(1); opacity: .8; }
+  50% { transform: translateY(-18px) scale(1.25); opacity: 1; }
+}
 
 /* QUOTEFORGE: builder wizard */
 body.sk-quoteforge .wizard{display:flex; flex-direction:column; gap:10px; margin-top:14px}
@@ -474,14 +493,18 @@ main { position: relative; z-index: 2; }
 
 /* ===================== CONTACT CHANNELS ===================== */
 .channels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 44px; }
-.chan { display: flex; align-items: center; gap: 16px; padding: 22px 20px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); text-decoration: none; transition: background .2s, color .2s, transform .2s, border-color .2s; }
-.chan:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; transform: translateY(-3px); }
-.chan .ic { width: 34px; height: 34px; flex: 0 0 34px; display: grid; place-items: center; border: 1.5px solid currentColor; border-radius: 50%; }
-.chan .ic svg { width: 18px; height: 18px; fill: currentColor; display: block; }
-.chan .tx { display: flex; flex-direction: column; line-height: 1.15; }
+/* social = small hovering logo icon; the platform name slides in on hover */
+.chan { display: inline-flex; align-items: center; gap: 0; padding: 0; width: 54px; height: 54px; border: 1.5px solid var(--accent); border-radius: 50%; background: transparent; color: var(--accent); text-decoration: none; overflow: hidden; transition: width .35s cubic-bezier(.2,.8,.2,1), background .2s, color .2s, border-color .2s; }
+.chan:hover { width: 190px; border-radius: 40px; background: var(--accent); color: #0a0a0a; }
+.chan .ic { width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center; }
+.chan .ic svg { width: 22px; height: 22px; fill: currentColor; display: block; }
+.chan .tx { display: flex; flex-direction: column; line-height: 1.15; white-space: nowrap; opacity: 0; transform: translateX(-8px); transition: opacity .25s .05s, transform .25s .05s; }
+.chan:hover .tx { opacity: 1; transform: translateX(0); }
 .chan .tx .t { font-family: var(--mono); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 600; }
 .chan .tx .s { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; opacity: .7; margin-top: 3px; }
 .chan:hover .tx .s { opacity: .85; }
+/* keep contact-page grid from breaking: cards keep their column but expand on hover */
+.channels .chan { justify-self: start; }
 
 /* channel cards: single accent colour for a clean, professional look */
 .chan.li, .chan.gh, .chan.em { border-color: var(--accent); color: var(--accent); }

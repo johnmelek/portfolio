@@ -135,4 +135,36 @@
   const fn = worlds[world] || worlds.pulse;
   const loop = () => { t += 1; fn(); requestAnimationFrame(loop); };
   loop();
+
+  /* ---------- hero photo: cursor-reactive tilt + floating particles ---------- */
+  const cut = document.querySelector('.hero .photo-cut');
+  const frame = document.querySelector('.hero .photo-frame');
+  if (cut && frame && fine && !reduce) {
+    let raf = 0;
+    const onMove = (e) => {
+      const r = frame.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        cut.style.transform = `scale(1.05) translate(${px * 22}px, ${-2 + py * 22}px) rotateY(${px * 12}deg) rotateX(${-py * 12}deg)`;
+      });
+    };
+    frame.addEventListener('mousemove', onMove);
+    frame.addEventListener('mouseleave', () => { cut.style.transform = ''; });
+  }
+  // generate drifting particle dots around the photo
+  const pc = document.getElementById('photoParticles');
+  if (pc) {
+    const N = 14;
+    let html = '';
+    for (let i = 0; i < N; i++) {
+      const x = (8 + Math.random() * 84).toFixed(1);
+      const y = (6 + Math.random() * 88).toFixed(1);
+      const d = (4 + Math.random() * 6).toFixed(1);
+      const delay = (Math.random() * 6).toFixed(2);
+      html += `<i style="left:${x}%;top:${y}%;animation-duration:${d}s;animation-delay:-${delay}s"></i>`;
+    }
+    pc.innerHTML = html;
+  }
 })();
