@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EdgeSync, John Melek</title>
-<meta name="description" content="EdgeSync, an on-site data reconciliation engine by John Melek. Matches records from CSV, REST JSON, and legacy exports by key, surfaces conflicts.">
+<meta name="description" content="EdgeSync, an on-site data reconciliation engine by John Melek. Live, clickable conflict table demo.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../css/style.css?v=5">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <style>body{--accent:#2e6bff;--accent-2:#6ea8ff}</style>
 </head>
 <body class="sk-edgesync">
@@ -18,13 +18,13 @@
     <div class="idx">TOOL 01 / 06</div>
     <h1>EdgeSync</h1>
     <div class="sub">On-site data reconciliation engine</div>
-    <p class="desc">Walk into a customer site. Their customer data lives in three places that do not agree: a CSV export, a REST JSON endpoint, and a legacy fixed-width dump. EdgeSync ingests all three, reconciles them by key, and surfaces every field-level conflict with proof. It emits a clean unified dataset and a downloadable CSV through a live console.</p>
+    <p class="desc">Walk into a customer site. Their data lives in three places that do not agree: a CSV export, a REST JSON endpoint, and a legacy fixed-width dump. EdgeSync ingests all three, reconciles them by key, and surfaces every field-level conflict with proof. Click a row to resolve it and watch the open-conflict count drop.</p>
   </section>
 
   <div class="pj" style="padding-top:0">
     <div class="shot">
       <img src="../assets/shots/edgesync.png" alt="EdgeSync running, showing the conflicts table across three data sources">
-      <div class="cap">Live view. EdgeSync reconciling 12 records across CSV, REST, and legacy sources. Four conflicts surfaced with the exact value each source holds.</div>
+      <div class="cap">Live view. EdgeSync reconciling records across CSV, REST, and legacy sources, surfacing field-level conflicts.</div>
     </div>
 
     <div class="pj-grid">
@@ -33,7 +33,6 @@
           <h4>WHAT IT DOES</h4>
           <div class="kv"><span>Sources</span><span>CSV · REST · legacy</span></div>
           <div class="kv"><span>Match key</span><span>record ID</span></div>
-          <div class="kv"><span>Conflict view</span><span>field-level, per source</span></div>
           <div class="kv"><span>Output</span><span>unified JSON + CSV</span></div>
           <div class="kv"><span>Demo data</span><span>12 records, 4 conflicts</span></div>
         </div>
@@ -43,33 +42,27 @@
         </div>
       </div>
       <div>
-        <div class="pj-card" style="margin-bottom:20px">
-          <h4>CONFLICT TABLE (DEMO)</h4>
-          <table class="datagrid">
-            <thead><tr><th>ID</th><th>CSV</th><th>REST</th><th>Legacy</th></tr></thead>
-            <tbody>
-              <tr><td>C002</td><td>a@x.com</td><td class="conflict">b@x.com</td><td>a@x.com</td></tr>
-              <tr><td>C003</td><td class="conflict">0611..</td><td>0612..</td><td>0612..</td></tr>
-              <tr><td>C007</td><td>Paris</td><td class="conflict">Lyon</td><td>Paris</td></tr>
-              <tr><td>C011</td><td class="conflict">active</td><td>closed</td><td>active</td></tr>
-            </tbody>
-          </table>
-          <div class="pj-tags"><span><a href="https://github.com/johnmelek/edgesync">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
-        </div>
-        <div class="pj-card">
-          <h4>FIELD ORIGIN</h4>
-          <p>Built from the automotive recovery engagement: 1,830 records reconciled across 12 dealerships. The demo dataset is sanitized, but the logic is the same one that matched records by ID with a 100% rate.</p>
+        <div class="comp" id="x-reconcile">
+          <h4>LIVE CONFLICT TABLE (DEMO)</h4>
+          <p style="font-family:var(--mono);font-size:12px;color:var(--dim);margin:0 0 14px">Open conflicts: <span class="rec-count">4</span> &nbsp;· click RESOLVE to match</p>
+          <div class="rrow"><span class="rid">C002</span><span>a@x.com</span><span class="conflict">b@x.com</span><span>a@x.com</span><button class="resolve">RESOLVE</button></div>
+          <div class="rrow"><span class="rid">C003</span><span class="conflict">0611..</span><span>0612..</span><span>0612..</span><button class="resolve">RESOLVE</button></div>
+          <div class="rrow"><span class="rid">C007</span><span>Paris</span><span class="conflict">Lyon</span><span>Paris</span><button class="resolve">RESOLVE</button></div>
+          <div class="rrow"><span class="rid">C011</span><span class="conflict">active</span><span>closed</span><span>active</span><button class="resolve">RESOLVE</button></div>
+          <div class="rec-done" hidden>✓ ALL CONFLICTS RESOLVED · unified dataset emitted</div>
+          <div class="pj-tags" style="margin-top:16px"><span><a href="https://github.com/johnmelek/edgesync">SOURCE REPO →</a></span><span>runs offline</span><span>no key</span></div>
         </div>
       </div>
     </div>
   </div>
 
   <footer class="foot">
-    <div class="big">Next: <a href="atlasdeploy.html">AtlasDeploy →</a></div>
+    <div class="big">Next: <a href="fieldconsole.html">FieldConsole →</a></div>
     <div class="meta">John Melek · Forward Deploy Engineer · AI Manager<br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek</div>
   </footer>
 </main>
-<script src="../js/nav.js?v=5"></script>
-<script src="../js/main.js?v=5"></script>
+<script src="../js/nav.js?v=8"></script>
+<script src="../js/main.js?v=8"></script>
+<script src="../js/project.js?v=8"></script>
 </body>
 </html>

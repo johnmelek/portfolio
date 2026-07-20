@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AtlasDeploy, John Melek</title>
-<meta name="description" content="AtlasDeploy, a wave deployment orchestrator by John Melek. Rolls a release across sites in waves with real steps and rollback.">
+<meta name="description" content="AtlasDeploy, a wave deployment orchestrator by John Melek. Run waves and watch nodes go live.">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="../css/style.css?v=5">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/style.css?v=8">
 <style>body{--accent:#ff6a00;--accent-2:#ffae66}</style>
 </head>
 <body class="sk-atlasdeploy">
@@ -18,55 +18,61 @@
     <div class="idx">TOOL 06 / 06</div>
     <h1>AtlasDeploy</h1>
     <div class="sub">Wave deployment orchestrator</div>
-    <p class="desc">You need to push a release across many locations without taking them all down at once. AtlasDeploy runs the rollout in waves, executes a real but safe step plan per site, streams live progress, and supports one-click rollback. Every shell step is allowlisted, so nothing destructive can run.</p>
+    <p class="desc">A rollout to many sites is either a calm wave sequence or a 3am outage. AtlasDeploy ships in waves with verified rollback. Hit RUN WAVE to deploy the next wave; nodes light up as they come online and the log records each one. Run it three times to complete the rollout, a fourth time to reset.</p>
   </section>
 
   <div class="pj" style="padding-top:0">
     <div class="shot">
-      <img src="../assets/shots/atlasdeploy.png" alt="AtlasDeploy running a wave rollout across eight sites with a live log">
-      <div class="cap">Live view. AtlasDeploy running the rollout in three waves across eight sites. The log streams each step as it happens, and one click rolls every completed site back in reverse order.</div>
+      <img src="../assets/shots/atlasdeploy.png" alt="AtlasDeploy running, wave deploy board">
+      <div class="cap">Live view. AtlasDeploy orchestrating wave deploys with verified rollback.</div>
     </div>
+
     <div class="pj-grid">
       <div>
         <div class="pj-card" style="margin-bottom:20px">
           <h4>WHAT IT DOES</h4>
-          <div class="kv"><span>Sites</span><span>8, in 3 waves</span></div>
-          <div class="kv"><span>Steps</span><span>allowlisted, real</span></div>
-          <div class="kv"><span>Stream</span><span>Server-Sent Events</span></div>
-          <div class="kv"><span>Rollback</span><span>one-click, reverse</span></div>
-          <div class="kv"><span>Demo</span><span>8/8 deployed, rolled back</span></div>
+          <div class="kv"><span>Unit</span><span>deploy waves</span></div>
+          <div class="kv"><span>Safety</span><span>verified rollback</span></div>
+          <div class="kv"><span>Target</span><span>multi-site</span></div>
+          <div class="kv"><span>Demo</span><span>3 waves, 12 nodes</span></div>
         </div>
         <div class="pj-card">
           <h4>STACK</h4>
-          <div class="stackline"><span class="s"><b>Python</b> 3.11</span><span class="s"><b>FastAPI</b></span><span class="s">asyncio</span></div>
+          <div class="stackline"><span class="s"><b>Python</b> 3.11</span><span class="s"><b>SSH</b></span><span class="s">Async</span></div>
         </div>
       </div>
       <div>
-        <div class="pj-card" style="margin-bottom:20px">
-          <h4>ROLLBACK WAVES</h4>
-          <div class="gantt">
-            <div class="row"><span>WAVE 1</span><div class="bar" style="width:30%"></div></div>
-            <div class="row"><span>WAVE 2</span><div class="bar" style="width:55%"></div></div>
-            <div class="row"><span>WAVE 3</span><div class="bar" style="width:80%"></div></div>
-            <div class="row"><span>VERIFY</span><div class="bar" style="width:42%"></div></div>
-            <div class="row"><span>ROLLBACK</span><div class="bar" style="width:90%; background:var(--accent-2); box-shadow:0 0 10px var(--accent-2)"></div></div>
+        <div class="comp" id="x-atlas">
+          <h4>DEPLOY WAVES (DEMO)</h4>
+          <div class="atlas-grid">
+            <div class="wnode" data-wave="1" data-id="S01"><div class="wv">WAVE 1</div>S01</div>
+            <div class="wnode" data-wave="1" data-id="S02"><div class="wv">WAVE 1</div>S02</div>
+            <div class="wnode" data-wave="1" data-id="S03"><div class="wv">WAVE 1</div>S03</div>
+            <div class="wnode" data-wave="1" data-id="S04"><div class="wv">WAVE 1</div>S04</div>
+            <div class="wnode" data-wave="2" data-id="S05"><div class="wv">WAVE 2</div>S05</div>
+            <div class="wnode" data-wave="2" data-id="S06"><div class="wv">WAVE 2</div>S06</div>
+            <div class="wnode" data-wave="2" data-id="S07"><div class="wv">WAVE 2</div>S07</div>
+            <div class="wnode" data-wave="2" data-id="S08"><div class="wv">WAVE 2</div>S08</div>
+            <div class="wnode" data-wave="3" data-id="S09"><div class="wv">WAVE 3</div>S09</div>
+            <div class="wnode" data-wave="3" data-id="S10"><div class="wv">WAVE 3</div>S10</div>
+            <div class="wnode" data-wave="3" data-id="S11"><div class="wv">WAVE 3</div>S11</div>
+            <div class="wnode" data-wave="3" data-id="S12"><div class="wv">WAVE 3</div>S12</div>
           </div>
-          <div class="pj-tags"><span><a href="https://github.com/johnmelek/atlasdeploy">SOURCE REPO →</a></span><span>safe by default</span><span>no key</span></div>
-        </div>
-        <div class="pj-card">
-          <h4>SAFETY</h4>
-          <p>The step runner rejects any binary not on the allowlist. There is no shell, no redirects, no path to run an arbitrary command. Swap in your own safe steps for a real rollout.</p>
+          <button class="atlas-go">RUN WAVE →</button>
+          <div class="atlas-log"></div>
+          <div class="pj-tags" style="margin-top:14px"><span><a href="https://github.com/johnmelek/atlasdeploy">SOURCE REPO →</a></span><span>rollback</span><span>no key</span></div>
         </div>
       </div>
     </div>
   </div>
 
   <footer class="foot">
-    <div class="big">Back to <a href="../projects.html">the set →</a></div>
+    <div class="big">Next: <a href="edgesync.html">EdgeSync →</a></div>
     <div class="meta">John Melek · Forward Deploy Engineer · AI Manager<br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek</div>
   </footer>
 </main>
-<script src="../js/nav.js?v=5"></script>
-<script src="../js/main.js?v=5"></script>
+<script src="../js/nav.js?v=8"></script>
+<script src="../js/main.js?v=8"></script>
+<script src="../js/project.js?v=8"></script>
 </body>
 </html>
