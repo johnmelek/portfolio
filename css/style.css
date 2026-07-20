@@ -397,8 +397,9 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
 .brand-rules { list-style: none; margin-top: 20px; max-width: 60ch; }
 .brand-rules li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ink-2); }
 .brand-rules li::before { content: "→ "; color: var(--accent); }
-.pj .back { font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: .05em; }
-.pj .back:hover { color: var(--accent); }
+.pj .back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 70px 0 26px; padding: 10px 16px; border: 1px solid var(--line); background: rgba(255,255,255,.02); transition: color .15s, gap .15s, border-color .15s, background .15s; }
+.pj .back::before { content: "←"; color: var(--accent); font-size: 15px; }
+.pj .back:hover { color: var(--accent); gap: 12px; border-color: var(--accent); background: rgba(255,77,46,.06); }
 .pj .idx { font-family: var(--mono); font-size: 13px; color: var(--accent); letter-spacing: .14em; margin-top: 30px; }
 .pj h1 { font-family: var(--disp); font-weight: 900; font-size: clamp(44px, 9vw, 120px); letter-spacing: -.04em; text-transform: uppercase; line-height: .86; margin: 12px 0 0; }
 .pj .sub { font-family: var(--mono); font-size: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--accent); margin-top: 14px; }
@@ -513,18 +514,6 @@ body::after {
 .msg.u { align-self: flex-end; background: var(--accent); color: #0a0a0b; }
 .msg.a { align-self: flex-start; border: 1px solid var(--line); color: var(--ink); }
 
-/* ===================== LOADER ===================== */
-#loader { position: fixed; inset: 0; z-index: 9999; background: #0a0a0b; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 26px; transition: opacity .5s ease, visibility .5s ease; }
-#loader.done { opacity: 0; visibility: hidden; }
-#loader .ld-mark { width: 120px; height: 120px; position: relative; }
-#loader .ld-mark svg { width: 100%; height: 100%; }
-#loader .ld-ring { position: absolute; inset: -14px; border: 2px solid transparent; border-top-color: var(--accent); border-right-color: var(--accent); border-radius: 50%; animation: ldSpin .9s linear infinite; }
-#loader .ld-name { font-family: var(--mono); font-size: 12px; letter-spacing: .42em; text-transform: uppercase; color: var(--ink); opacity: .7; padding-left: .42em; }
-#loader .ld-bar { width: 180px; height: 2px; background: var(--line); overflow: hidden; }
-#loader .ld-bar i { display: block; height: 100%; width: 40%; background: var(--accent); animation: ldBar 1.1s ease-in-out infinite; }
-@keyframes ldSpin { to { transform: rotate(360deg); } }
-@keyframes ldBar { 0% { transform: translateX(-100%); } 100% { transform: translateX(350%); } }
-
 /* ===================== LANGUAGE SWITCHER ===================== */
 .lang { display: inline-flex; align-items: center; gap: 2px; margin-left: auto; }
 .lang button { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; background: none; border: 1px solid transparent; color: var(--ink-2); padding: 5px 8px; cursor: pointer; transition: color .15s, border-color .15s; }
@@ -533,8 +522,9 @@ body::after {
 .lang .sep { width: 1px; height: 14px; background: var(--line); }
 
 /* ===================== BACK BUTTON ===================== */
-.back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 18px; transition: color .15s, gap .15s; }
-.back:hover { color: var(--accent); gap: 12px; }
+.back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin: 70px 0 26px; padding: 10px 16px; border: 1px solid var(--line); background: rgba(255,255,255,.02); transition: color .15s, gap .15s, border-color .15s, background .15s; }
+.back::before { content: "←"; color: var(--accent); font-size: 15px; }
+.back:hover { color: var(--accent); gap: 12px; border-color: var(--accent); background: rgba(255,77,46,.06); }
 
 /* ===================== MENU RETURN/CLOSE ===================== */
 .nav-overlay .nav-foot { margin-top: 40px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
@@ -543,5 +533,4 @@ body::after {
 
 @media (max-width: 860px) {
   .lang button { padding: 4px 6px; font-size: 10px; }
-  #loader .ld-mark { width: 96px; height: 96px; }
 }

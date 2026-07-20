@@ -1,21 +1,8 @@
-/* JOHN MELEK, portfolio interactions: loader, cursor, nav, reveal, parallax, progress, clock */
+/* JOHN MELEK, portfolio interactions: nav, reveal, parallax, progress, clock */
 (() => {
   const root = document.documentElement;
   root.classList.add('js');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // loader: hide once the window has loaded (with a small minimum so it never flashes)
-  const loader = document.getElementById('loader');
-  if (loader) {
-    const minShow = new Promise(r => setTimeout(r, 650));
-    const loaded = new Promise(r => {
-      if (document.readyState === 'complete') r();
-      else window.addEventListener('load', r, { once: true });
-      // safety: never trap the user behind the loader
-      setTimeout(r, 2500);
-    });
-    Promise.all([minShow, loaded]).then(() => loader.classList.add('done'));
-  }
 
   // scroll progress bar
   const prog = document.createElement('div'); prog.className = 'progress';
@@ -28,13 +15,7 @@
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  // nav overlay
-  const btn = document.querySelector('.menu-btn');
-  const ov = document.querySelector('.nav-overlay');
-  if (btn && ov) {
-    btn.addEventListener('click', () => { ov.classList.toggle('open'); btn.textContent = ov.classList.contains('open') ? 'CLOSE' : 'MENU'; });
-    ov.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { ov.classList.remove('open'); btn.textContent = 'MENU'; }));
-  }
+  // nav overlay (menu open/close + language switch) is owned by nav.js
 
   // clock
   const clk = document.querySelector('.clk');

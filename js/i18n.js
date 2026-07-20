@@ -28,10 +28,10 @@
     'f.selected': { en: 'Selected work, 2021 to present.', fr: 'Travaux choisis, 2021 à aujourd\'hui.', es: 'Trabajos seleccionados, 2021 a hoy.' },
     // generic
     'g.back': { en: 'BACK', fr: 'RETOUR', es: 'ATRÁS' },
-    'g.see.work': { en: 'SEE FIELD WORK →', fr: 'VOIR LE TERRAIN →', es: 'VER TRABAJO →' },
     'g.open.channel': { en: 'OPEN A CHANNEL', fr: 'OUVRIR UN CANAL', es: 'ABRIR UN CANAL' },
     'g.read.log': { en: 'READ THE FULL LOG →', fr: 'LIRE LE JOURNAL →', es: 'LEER EL REGISTRO →' },
     'g.see.set': { en: 'SEE THE SELECTED SET →', fr: 'VOIR LA SÉRIE →', es: 'VER EL SET →' },
+    'g.see.work': { en: 'SEE FIELD WORK →', fr: 'VOIR LE TERRAIN →', es: 'VER TRABAJO →' },
     // home
     'h.kick': { en: '● Available for deployment', fr: '● Disponible pour déploiement', es: '● Disponible para despliegue' },
     'h.sub': { en: 'I am a forward deploy engineer and AI manager. I walk into broken client integrations, dealership networks, and field offices, and I make the software <b>actually run</b> before the meeting ends. That includes standing up AI where it earns its place: assistants, document and data pipelines, and models wired into the tools your team already uses.', fr: 'Je suis ingénieur déploiement terrain et IA manager. J\'entre dans des intégrations client cassées, des réseaux de concessions et des sites terrain, et je fais tourner le logiciel <b>pour de vrai</b> avant la fin de la réunion. Cela inclut déployer l\'IA là où elle compte : assistants, pipelines documentaires et de données, et modèles reliés aux outils que votre équipe utilise déjà.', es: 'Soy ingeniero de despliegue en terreno e IA manager. Entro a integraciones cliente rotas, redes de concesionarios y oficinas de campo, y hago que el software <b>funcione de verdad</b> antes de que termine la reunión. Eso incluye montar IA donde suma: asistentes, pipelines de documentos y datos, y modelos conectados a las herramientas que tu equipo ya usa.' },
@@ -99,7 +99,7 @@
     // chrome misc
     'nav.role': { en: '· FORWARD DEPLOY ENGINEER · AI MANAGER', fr: '· INGÉNIEUR DÉPLOIEMENT TERRAIN · IA MANAGER', es: '· INGENIERO DESPLIEGUE TERRENO · IA MANAGER' },
     // project pages (shared)
-    'pj.back': { en: '← THE SELECTED SET', fr: '← LA SÉRIE', es: '← EL SET' },
+    'pj.back': { en: 'THE SELECTED SET', fr: 'LA SÉRIE', es: 'EL SET' },
     'pj.live': { en: 'LIVE APP', fr: 'APP LIVE', es: 'APP EN VIVO' },
     'pj.source': { en: 'SOURCE REPO →', fr: 'REPO SOURCE →', es: 'REPO FUENTE →' },
     'pj.next': { en: 'Next:', fr: 'Suivant :', es: 'Siguiente:' },
