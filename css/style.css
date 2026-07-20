@@ -181,18 +181,11 @@ body::after {
 .foot .big a { color: var(--accent); }
 .foot .meta { font-family: var(--mono); font-size: 12px; color: var(--dim); text-align: right; line-height: 1.9; }
 
-/* footer social card row (LinkedIn blue, Email red, GitHub orange) */
-.foot-social { display: flex; gap: 12px; flex-wrap: wrap; width: 100%; margin-top: 34px; }
-.fcard { display: inline-flex; align-items: center; gap: 11px; padding: 13px 16px; border: 1.5px solid var(--ink); text-decoration: none; color: var(--ink); transition: background .2s, color .2s, border-color .2s, transform .2s; }
-.fcard svg { width: 18px; height: 18px; fill: currentColor; display: block; flex: 0 0 18px; }
-.fcard .ft { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
-.fcard .fs { font-family: var(--mono); font-size: 11px; opacity: .7; }
-.fcard.li { border-color: #2e6bff; color: #2e6bff; }
-.fcard.li:hover { background: #2e6bff; border-color: #2e6bff; color: #fff; transform: translateY(-3px); }
-.fcard.em { border-color: var(--accent); color: var(--accent); }
-.fcard.em:hover { background: var(--accent); border-color: var(--accent); color: #0a0a0a; transform: translateY(-3px); }
-.fcard.gh { border-color: #ff6a00; color: #ff6a00; }
-.fcard.gh:hover { background: #ff6a00; border-color: #ff6a00; color: #0a0a0a; transform: translateY(-3px); }
+/* footer social card row (static .foot-links: LinkedIn blue, GitHub orange, Email red) */
+.foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; flex-basis: 100%; margin-top: 36px; }
+.foot-links .chan { padding: 18px 20px; }
+.foot-links .chan .s { opacity: .8; }
+@media (max-width: 640px) { .foot-links { grid-template-columns: 1fr; } }
 
 /* scroll progress */
 .progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 96;
