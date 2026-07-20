@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Deploy Arrow logo">
+  <defs>
+    <style>
+      .bg{fill:#0a0a0b}
+      .acc{fill:#ff4d2e}
+      .ink{fill:#f4f1ea}
+      .ln{fill:none;stroke:#ff4d2e;stroke-width:14;stroke-linecap:square;stroke-linejoin:miter}
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- bracket frame -->
+  <path class="ln" d="M34 56 L34 34 L56 34"/>
+  <path class="ln" d="M166 56 L166 34 L144 34"/>
+  <path class="ln" d="M34 144 L34 166 L56 166"/>
+  <path class="ln" d="M166 144 L166 166 L144 166"/>
+  <!-- deploy arrow: arrowhead + shaft bursting up-right -->
+  <g class="acc">
+    <path d="M64 136 L100 100 L136 136 L116 136 L116 70 L84 70 L84 136 Z"/>
+  </g>
+  <!-- small JM wordmark -->
+  <text x="100" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="20" letter-spacing="3" class="ink">JM</text>
+</svg>

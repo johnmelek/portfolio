@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Deploy Trajectory">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:24;stroke-linecap:round;stroke-linejoin:round}
+    .traj{fill:none;stroke:#ff4d2e;stroke-width:9;stroke-linecap:round}
+    .acc{fill:#ff4d2e}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM as solid initials -->
+  <path class="ln" d="M52 44 L52 132 Q52 158 28 158"/>
+  <path class="ln" d="M84 150 L84 44 L112 110 L140 44 L140 150"/>
+  <!-- the deploy trajectory threads through them -->
+  <path class="traj" d="M28 158 C 40 110, 70 70, 112 52 C 145 38, 168 44, 182 40"/>
+  <path class="acc" d="M182 40 L162 30 L172 52 Z"/>
+  <!-- AI payload riding the path -->
+  <circle class="acc" cx="112" cy="52" r="11"/>
+  <circle cx="112" cy="52" r="4" fill="#0a0a0b"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="13" letter-spacing="2">JM = ONE DEPLOY</text>
+</svg>

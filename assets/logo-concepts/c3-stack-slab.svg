@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Stack slab logo">
+  <defs>
+    <style>
+      .bg{fill:#0a0a0b}
+      .acc{fill:#ff4d2e}
+      .slab{fill:#f4f1ea}
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- heavy slab block clipped -->
+  <rect class="acc" x="40" y="44" width="120" height="92" rx="4"/>
+  <!-- JM cut out (negative space) -->
+  <text x="100" y="118" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="84" letter-spacing="-4" fill="#0a0a0b">JM</text>
+  <!-- deploy tick under slab -->
+  <rect class="slab" x="40" y="150" width="120" height="10"/>
+  <rect class="acc" x="40" y="150" width="54" height="10"/>
+  <text x="100" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="16" letter-spacing="4" class="slab">DEPLOY</text>
+</svg>

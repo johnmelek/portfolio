@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Hex Node logo">
+  <defs>
+    <style>
+      .bg{fill:#0a0a0b}
+      .acc{fill:#ff4d2e}
+      .accs{fill:none;stroke:#ff4d2e;stroke-width:10}
+      .ink{fill:#f4f1ea}
+      .dot{fill:#f4f1ea}
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- hexagon -->
+  <polygon class="accs" points="100,36 154,68 154,132 100,164 46,132 46,68"/>
+  <!-- inner node graph -->
+  <g>
+    <circle class="dot" cx="100" cy="100" r="13"/>
+    <line class="accs" x1="100" y1="100" x2="66" y2="68"/>
+    <line class="accs" x1="100" y1="100" x2="134" y2="68"/>
+    <line class="accs" x1="100" y1="100" x2="100" y2="146"/>
+    <circle class="acc" cx="66" cy="68" r="9"/>
+    <circle class="acc" cx="134" cy="68" r="9"/>
+    <circle class="acc" cx="100" cy="146" r="9"/>
+  </g>
+  <text x="100" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="18" letter-spacing="3" class="ink">JM</text>
+</svg>

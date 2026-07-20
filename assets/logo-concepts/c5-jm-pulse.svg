@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Pulse Deploy monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}.acc{fill:#ff4d2e}.ink{fill:#f4f1ea}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:9;stroke-linecap:square}
+    .lnA{fill:none;stroke:#ff4d2e;stroke-width:6}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM -->
+  <g class="ln">
+    <path d="M36 62 L36 122 Q36 142 56 142 Q76 142 76 122 L76 76"/>
+    <path d="M92 140 L92 62 L118 116 L144 62 L144 140"/>
+  </g>
+  <!-- pulse / uptime line through baseline with AI node on peak -->
+  <polyline class="lnA" points="30,152 70,152 84,152 92,128 100,150 118,152 150,152 170,152"/>
+  <circle class="acc" cx="100" cy="150" r="8"/>
+  <text x="100" y="180" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" letter-spacing="3">DEPLOY · AI</text>
+</svg>

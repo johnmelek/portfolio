@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Forward Arrow monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}.acc{fill:#ff4d2e}.ink{fill:#f4f1ea}
+    .ln{fill:none;stroke:#ff4d2e;stroke-width:9;stroke-linecap:square;stroke-linejoin:miter}
+    .txt{fill:#f4f1ea;font-family:Arial Black,Arial,sans-serif;font-weight:900}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM built from strokes -->
+  <g class="ln" stroke="#f4f1ea">
+    <!-- J -->
+    <path d="M40 56 L40 120 Q40 140 60 140 Q80 140 80 120 L80 70"/>
+    <!-- M -->
+    <path d="M96 138 L96 56 L122 116 L148 56 L148 138"/>
+  </g>
+  <!-- deploy arrow fused into M apex (up-right burst) -->
+  <g class="acc">
+    <path d="M122 56 L150 28 L150 50 L172 50 L172 72 L150 72 L150 94 Z" transform="translate(-6,-4)"/>
+    <path class="ln" stroke="#ff4d2e" d="M96 56 L122 116 L148 56"/>
+  </g>
+  <text x="100" y="178" text-anchor="middle" class="txt" font-size="15" letter-spacing="3">DEPLOY · AI</text>
+</svg>

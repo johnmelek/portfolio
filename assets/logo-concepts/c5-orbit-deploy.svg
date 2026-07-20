@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Orbit Deploy logo">
+  <defs>
+    <style>
+      .bg{fill:#0a0a0b}
+      .acc{fill:#ff4d2e}
+      .ring{fill:none;stroke:#ff4d2e;stroke-width:10}
+      .slab{fill:#f4f1ea}
+      .planet{fill:#f4f1ea}
+    </style>
+  </defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- orbital ring (tilted) -->
+  <ellipse class="ring" cx="100" cy="96" rx="62" ry="30" transform="rotate(-28 100 96)"/>
+  <!-- planet -->
+  <circle class="planet" cx="100" cy="96" r="20"/>
+  <!-- deploy arrow riding the ring -->
+  <g class="acc" transform="rotate(-28 100 96)">
+    <path d="M150 96 l18 -10 l0 20 z"/>
+  </g>
+  <text x="100" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="18" letter-spacing="3" class="slab">JM</text>
+</svg>

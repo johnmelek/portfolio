@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Orbital Strike monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .ln{fill:none;stroke:#ff4d2e;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}
+    .J{fill:none;stroke:#ff4d2e;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}
+    .M{fill:none;stroke:#f4f1ea;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}
+    .acc{fill:#ff4d2e}
+    .ring{fill:none;stroke:#ff4d2e;stroke-width:7}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- white M, red J clash -->
+  <path class="M" d="M90 150 L90 34 L120 108 L150 34 L150 150"/>
+  <path class="J" d="M64 34 L64 124 Q64 154 34 154" transform="translate(6,0)"/>
+  <!-- orbital ring + AI dot launching from J hook -->
+  <ellipse class="ring" cx="120" cy="66" rx="56" ry="22" transform="rotate(-22 120 66)"/>
+  <circle class="acc" cx="170" cy="50" r="11"/>
+  <path class="acc" d="M170 50 L186 33 L180 50 L186 67 Z"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="3">DEPLOY · AI</text>
+</svg>

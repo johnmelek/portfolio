@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Circuit Bolt monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:26;stroke-linecap:square;stroke-linejoin:miter}
+    .acc{fill:#ff4d2e}
+    .lnA{fill:none;stroke:#ff4d2e;stroke-width:8}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM heavy -->
+  <path class="ln" d="M54 36 L54 122 Q54 150 32 150"/>
+  <path class="ln" d="M90 148 L90 36 L118 110 L146 36 L146 148"/>
+  <!-- circuit board under JM, ending in deploy pin -->
+  <path class="lnA" d="M32 150 L32 172 L100 172 L100 150 M146 148 L146 172 L100 172"/>
+  <path class="acc" d="M100 150 L122 126 L104 126 L122 104 L84 146 L104 146 L100 150 Z"/>
+  <!-- AI node on a joint -->
+  <circle class="acc" cx="118" cy="110" r="9"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="3">DEPLOY · AI</text>
+</svg>

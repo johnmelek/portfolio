@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Command Button">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .btn{fill:none;stroke:#ff4d2e;stroke-width:10}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+    .acc{fill:#ff4d2e}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM sits INSIDE a deploy button -->
+  <rect class="btn" x="30" y="30" width="140" height="140" rx="20"/>
+  <path class="ln" d="M58 58 L58 134 Q58 152 42 152"/>
+  <path class="ln" d="M86 148 L86 58 L110 116 L134 58 L134 148"/>
+  <!-- the play/deploy triangle appears as the J's hook + apex merging -->
+  <path class="acc" d="M96 92 L120 104 L96 116 Z"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="13" letter-spacing="2">PRESS TO DEPLOY</text>
+</svg>

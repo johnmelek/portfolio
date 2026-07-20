@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Circuit monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}.acc{fill:#ff4d2e}.ink{fill:#f4f1ea}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:9;stroke-linecap:square;stroke-linejoin:miter}
+    .lnA{fill:none;stroke:#ff4d2e;stroke-width:6}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM -->
+  <g class="ln">
+    <path d="M34 60 L34 120 Q34 140 54 140 Q74 140 74 120 L74 74"/>
+    <path d="M90 138 L90 60 L116 114 L142 60 L142 138"/>
+  </g>
+  <!-- circuit trace from M foot ending in deploy pin (arrow) -->
+  <g class="lnA">
+    <path d="M90 138 L90 158 L150 158 L150 138"/>
+  </g>
+  <g class="acc">
+    <path d="M150 138 L168 120 L168 132 L182 132 L182 144 L168 144 L168 156 Z"/>
+  </g>
+  <text x="100" y="180" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" letter-spacing="3">DEPLOY · AI</text>
+</svg>

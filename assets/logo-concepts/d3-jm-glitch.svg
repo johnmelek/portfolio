@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Glitch monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .r{fill:#ff4d2e}.w{fill:#f4f1ea}.c{fill:none;stroke-width:24;stroke-linecap:square}
+    .rS{stroke:#ff4d2e}.wS{stroke:#f4f1ea}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- RGB split / glitch J and M, offset -->
+  <g transform="translate(-4,-3)"><path class="c rS" d="M56 36 L56 124 Q56 152 34 152"/>
+  <path class="c rS" d="M92 150 L92 36 L120 110 L148 36 L148 150"/></g>
+  <g transform="translate(5,4)" opacity="0.9"><path class="c wS" d="M56 36 L56 124 Q56 152 34 152"/>
+  <path class="c wS" d="M92 150 L92 36 L120 110 L148 36 L148 150"/></g>
+  <!-- deploy bolt instead of apex -->
+  <path class="r" d="M118 30 L142 64 L126 64 L140 92 L104 50 L122 50 Z"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="3">DEPLOY · AI</text>
+</svg>

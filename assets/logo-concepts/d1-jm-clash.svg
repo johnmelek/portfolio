@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Clash monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .J{fill:none;stroke:#ff4d2e;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}
+    .M{fill:none;stroke:#f4f1ea;stroke-width:28;stroke-linecap:round;stroke-linejoin:round}
+    .arw{fill:#ff4d2e}
+    .fr{fill:none;stroke:#ff4d2e;stroke-width:8}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- brutalist frame -->
+  <path class="fr" d="M16 54 L16 16 L54 16"/>
+  <path class="fr" d="M184 54 L184 16 L146 16"/>
+  <path class="fr" d="M16 146 L16 184 L54 184"/>
+  <path class="fr" d="M184 146 L184 184 L146 184"/>
+  <!-- overlapping clash: white M behind, red J slamming over -->
+  <path class="M" d="M86 152 L86 34 L116 108 L146 34 L146 152"/>
+  <path class="J" d="M60 34 L60 126 Q60 156 30 156" transform="translate(6,0)"/>
+  <!-- deploy arrow bursting from M apex -->
+  <path class="arw" d="M116 34 L150 8 L150 26 L176 26 L176 52 L150 52 L150 70 Z"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="3">DEPLOY · AI</text>
+</svg>

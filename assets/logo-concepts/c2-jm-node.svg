@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Node Mesh monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}.acc{fill:#ff4d2e}.ink{fill:#f4f1ea}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:9;stroke-linecap:square}
+    .lnA{fill:none;stroke:#ff4d2e;stroke-width:6}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM -->
+  <g class="ln">
+    <path d="M36 58 L36 118 Q36 138 56 138 Q76 138 76 118 L76 72"/>
+    <path d="M92 136 L92 58 L118 112 L144 58 L144 136"/>
+  </g>
+  <!-- AI node mesh: dots on letter joints + links -->
+  <g class="lnA">
+    <line x1="56" y1="138" x2="92" y2="136"/>
+    <line x1="118" y1="112" x2="144" y2="136"/>
+  </g>
+  <circle class="acc" cx="56" cy="138" r="8"/>
+  <circle class="acc" cx="118" cy="112" r="8"/>
+  <circle class="acc" cx="144" cy="136" r="8"/>
+  <circle class="ink" cx="92" cy="58" r="6"/>
+  <text x="100" y="178" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" letter-spacing="3">DEPLOY · AI</text>
+</svg>

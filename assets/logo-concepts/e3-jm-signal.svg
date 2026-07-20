@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Signal Resolve">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+    .acc{fill:#ff4d2e}
+    .noise{stroke:#ff4d2e;stroke-width:4;stroke-linecap:round;opacity:.5}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM built from a noisy signal that RESOLVES into letters -->
+  <path class="ln" d="M50 44 L50 130 Q50 156 28 156"/>
+  <path class="ln" d="M82 150 L82 44 L110 110 L138 44 L138 150"/>
+  <!-- AI connects the two like a sync line -->
+  <path class="noise" d="M28 156 L20 150 L34 142 L22 134 L36 126"/>
+  <path class="noise" d="M138 150 L150 142 L136 134 L150 126 L138 118"/>
+  <!-- the resolved heartbeat through both -->
+  <path d="M24 96 L60 96 L72 96 L82 70 L96 120 L110 96 L138 96 L176 96" fill="none" stroke="#ff4d2e" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle class="acc" cx="96" cy="120" r="9"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="13" letter-spacing="2">NOISE TO SIGNAL</text>
+</svg>

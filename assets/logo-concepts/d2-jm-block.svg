@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Solid Block monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .box{fill:#ff4d2e}
+    .cut{fill:#0a0a0b}
+    .J{fill:#f4f1ea}
+    .M{fill:#f4f1ea}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- heavy red slab -->
+  <rect class="box" x="22" y="30" width="156" height="122" rx="6"/>
+  <!-- JM knocked out (negative space) -->
+  <g fill="#0a0a0b" font-family="Arial Black,Arial,sans-serif" font-weight="900">
+    <text x="40" y="135" font-size="96" letter-spacing="-6">JM</text>
+  </g>
+  <!-- deploy slash through the slab -->
+  <path d="M22 152 L178 30" stroke="#0a0a0b" stroke-width="14"/>
+  <!-- AI node riding the slash -->
+  <circle fill="#ff4d2e" cx="150" cy="58" r="11"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="14" letter-spacing="3">DEPLOY · AI</text>
+</svg>

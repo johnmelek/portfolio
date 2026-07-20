@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Hex Brain">
+  <defs><style>
+    .bg{fill:#0a0a0b}
+    .hex{fill:none;stroke:#ff4d2e;stroke-width:8}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:22;stroke-linecap:round;stroke-linejoin:round}
+    .acc{fill:#ff4d2e}
+    .syn{stroke:#ff4d2e;stroke-width:4;opacity:.7}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM woven into a neural hexagon (AI) -->
+  <polygon class="hex" points="100,34 152,66 152,130 100,162 48,130 48,66"/>
+  <path class="ln" d="M52 62 L52 128 Q52 150 34 150"/>
+  <path class="ln" d="M84 146 L84 62 L110 116 L136 62 L136 146"/>
+  <!-- synapses fire between nodes of the net -->
+  <g class="syn">
+    <line x1="100" y1="34" x2="84" y2="62"/><line x1="152" y1="66" x2="136" y2="62"/>
+    <line x1="48" y1="66" x2="52" y2="62"/><line x1="100" y1="98" x2="110" y2="116"/>
+  </g>
+  <circle class="acc" cx="110" cy="116" r="7"/>
+  <circle class="acc" cx="100" cy="98" r="5"/>
+  <text x="100" y="190" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="13" letter-spacing="2">MIND THAT SHIPS</text>
+</svg>

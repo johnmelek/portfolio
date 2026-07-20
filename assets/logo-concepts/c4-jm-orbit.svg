@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="JM Orbit monogram">
+  <defs><style>
+    .bg{fill:#0a0a0b}.acc{fill:#ff4d2e}.ink{fill:#f4f1ea}
+    .ln{fill:none;stroke:#f4f1ea;stroke-width:9;stroke-linecap:square}
+    .lnA{fill:none;stroke:#ff4d2e;stroke-width:6}
+  </style></defs>
+  <rect class="bg" width="200" height="200" rx="14"/>
+  <!-- JM -->
+  <g class="ln">
+    <path d="M38 60 L38 120 Q38 140 58 140 Q78 140 78 120 L78 74"/>
+    <path d="M94 138 L94 60 L120 114 L146 60 L146 138"/>
+  </g>
+  <!-- orbit ring around JM apex with AI dot + launch arrow -->
+  <ellipse class="lnA" cx="118" cy="74" rx="46" ry="20" transform="rotate(-24 118 74)"/>
+  <circle class="acc" cx="160" cy="58" r="9"/>
+  <g class="acc" transform="rotate(-24 118 74)"><path d="M160 74 l16 -9 l0 18 z"/></g>
+  <text x="100" y="180" text-anchor="middle" fill="#f4f1ea" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" letter-spacing="3">DEPLOY · AI</text>
+</svg>
