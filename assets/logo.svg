@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="John Melek monogram">
+  <rect width="120" height="120" fill="#0a0a0b"/>
+  <rect x="6" y="6" width="108" height="108" fill="none" stroke="#ff4d2e" stroke-width="3"/>
+  <text x="60" y="78" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="900" font-size="56" letter-spacing="-3" fill="#f4f1ea">JM</text>
+  <rect x="6" y="6" width="108" height="108" fill="url(#g)" opacity="0.12"/>
+  <defs>
+    <pattern id="g" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1" height="1" fill="#fff"/>
+    </pattern>
+  </defs>
+</svg>
