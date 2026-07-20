@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link rel="icon" href="assets/favicon.png" type="image/png">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-<link rel="stylesheet" href="css/style.css?v=27">
+<link rel="stylesheet" href="css/style.css?v=28">
 </head>
 <body data-world="edgesync">
 <canvas id="world-canvas"></canvas>
@@ -19,7 +19,7 @@
     <div class="left">
       <div>
         <div class="kick"><span data-i18n="h.kick">● Available for deployment</span></div>
-        <h1 class="display-type">GETTING<br>SOFTWARE<br><span class="out">TO RUN</span><br>AT THE SITE.</h1>
+        <h1 class="display-type" data-i18n="h.title">GETTING<br>SOFTWARE<br><span class="out">TO RUN</span><br>AT THE SITE.</h1>
         <p class="sub"><span data-i18n="h.sub">I am a forward deploy engineer and AI manager. I walk into broken client integrations, dealership networks, and field offices, and I make the software <b>actually run</b> before the meeting ends. That includes standing up AI where it earns its place: assistants, document and data pipelines, and models wired into the tools your team already uses.</span></p>
         <div class="cta">
           <a class="btn fill" href="work.html"><span data-i18n="g.see.work">SEE FIELD WORK →</span></a>
@@ -28,8 +28,8 @@
       </div>
       <div class="marq" style="margin-top:40px">
         <div class="track">
-          <span>RECONCILE <b>·</b> DEPLOY <b>·</b> MONITOR <b>·</b> RECOVER <b>·</b> SHIP SAME DAY <b>·</b> ZERO KEYS <b>·</b> ROOT CAUSE FIRST <b>·</b> </span>
-          <span>RECONCILE <b>·</b> DEPLOY <b>·</b> MONITOR <b>·</b> RECOVER <b>·</b> SHIP SAME DAY <b>·</b> ZERO KEYS <b>·</b> ROOT CAUSE FIRST <b>·</b> </span>
+          <span data-i18n="h.marq">RECONCILE <b>·</b> DEPLOY <b>·</b> MONITOR <b>·</b> RECOVER <b>·</b> SHIP SAME DAY <b>·</b> ZERO KEYS <b>·</b> ROOT CAUSE FIRST <b>·</b> </span>
+          <span data-i18n="h.marq">RECONCILE <b>·</b> DEPLOY <b>·</b> MONITOR <b>·</b> RECOVER <b>·</b> SHIP SAME DAY <b>·</b> ZERO KEYS <b>·</b> ROOT CAUSE FIRST <b>·</b> </span>
         </div>
       </div>
     </div>
@@ -52,30 +52,30 @@
   </section>
 
   <section class="sec invert rv" data-sec="approach">
-    <div class="sec-head"><span class="no">/ APPROACH</span><h2><span data-i18n="s.approach">How the deployment runs</span></h2></div>
+    <div class="sec-head"><span class="no"><span data-i18n="sec.approach">/ APPROACH</span></span><h2><span data-i18n="s.approach">How the deployment runs</span></h2></div>
     <div class="appr">
       <div class="c"><div class="n">01</div><h3><span data-i18n="a1.t">Proof, not promises</span></h3><p><span data-i18n="a1.p">Every claim here is measured or drawn from a real engagement. Numbers are recovery counts, site ranges, and rollout windows. None are invented.</span></p></div>
       <div class="c"><div class="n">02</div><h3><span data-i18n="a2.t">Local-first, key-free</span></h3><p><span data-i18n="a2.p">The tools I build run on the client machine with no API key and no cloud dependency. You see them work the same afternoon, then own the code.</span></p></div>
       <div class="c"><div class="n">03</div><h3><span data-i18n="a3.t">Safe by default</span></h3><p><span data-i18n="a3.p">Scoped recon stays local. Rollouts run in waves with one-click rollback. Nothing destructive ships without a verified cause first.</span></p></div>
     </div>
-    <blockquote class="pull" style="margin-left:auto">"I do not demo slides. I demo the thing running."<small>Field principle</small></blockquote>
+    <blockquote class="pull" style="margin-left:auto"><span data-i18n="h.principle.quote">"I do not demo slides. I demo the thing running."</span><small><span data-i18n="h.principle.label">Field principle</span></small></blockquote>
   </section>
 
   <section class="sec rv" data-sec="fieldlog">
-    <div class="sec-head"><span class="no">/ FIELD LOG</span><h2><span data-i18n="s.fieldlog">Two engagements, root cause first</span></h2><span class="note"><span data-i18n="s.note.request">Full case history available on request.</span></span></div>
+    <div class="sec-head"><span class="no"><span data-i18n="sec.log">/ FIELD LOG</span></span><h2><span data-i18n="s.fieldlog">Two engagements, root cause first</span></h2><span class="note"><span data-i18n="s.note.request">Full case history available on request.</span></span></div>
     <article class="case">
-      <div class="top"><span class="id">CASE 001</span><h3><span data-i18n="fl.c1.t">Bulk customer-data recovery across 12 distributed sites</span></h3></div>
-      <div class="body"><div class="lbl">Result</div><p class="res"><span data-i18n="fl.c1.r">Recovered <b>1,830</b> missing customer records across 12 sites with a 100% match rate on record ID, zero destructive writes, and the nightly batch back to 0 errors.</span></p></div>
+      <div class="top"><span class="id"><span data-i18n="fl.case">CASE 001</span></span><h3><span data-i18n="fl.c1.t">Bulk customer-data recovery across 12 distributed sites</span></h3></div>
+      <div class="body"><div class="lbl"><span data-i18n="fl.result">Result</span></div><p class="res"><span data-i18n="fl.c1.r">Recovered <b>1,830</b> missing customer records across 12 sites with a 100% match rate on record ID, zero destructive writes, and the nightly batch back to 0 errors.</span></p></div>
     </article>
     <article class="case">
-      <div class="top"><span class="id">CASE 002</span><h3><span data-i18n="fl.c2.t">Real-time gateway stall on a streaming-only upstream</span></h3></div>
-      <div class="body"><div class="lbl">Result</div><p class="res"><span data-i18n="fl.c2.r">Restored streaming with a <b>one-line client change</b>. The client was requesting a non-streaming response from an upstream that only speaks Server-Sent Events. No sudo, no network change.</span></p></div>
+      <div class="top"><span class="id"><span data-i18n="fl.case">CASE 002</span></span><h3><span data-i18n="fl.c2.t">Real-time gateway stall on a streaming-only upstream</span></h3></div>
+      <div class="body"><div class="lbl"><span data-i18n="fl.result">Result</span></div><p class="res"><span data-i18n="fl.c2.r">Restored streaming with a <b>one-line client change</b>. The client was requesting a non-streaming response from an upstream that only speaks Server-Sent Events. No sudo, no network change.</span></p></div>
     </article>
     <div class="cta" style="margin-top:26px"><a class="btn" href="fieldlog.html"><span data-i18n="g.read.log">READ THE FULL LOG →</span></a></div>
   </section>
 
   <section class="sec invert rv" data-sec="work">
-    <div class="sec-head"><span class="no">/ FIELD WORK</span><h2><span data-i18n="s.work">Selected engagements</span></h2><span class="note"><span data-i18n="s.note.sample">A sample of field work. The full set spans more sectors and sites.</span></span></div>
+    <div class="sec-head"><span class="no"><span data-i18n="sec.work">/ FIELD WORK</span></span><h2><span data-i18n="s.work">Selected engagements</span></h2><span class="note"><span data-i18n="s.note.sample">A sample of field work. The full set spans more sectors and sites.</span></span></div>
     <div class="work-list">
       <a class="work-row" href="projects/edgesync.html"><span class="yr">2026</span><span class="ttl">Automotive group, data reconciliation<small>Recovered 1,830 records across 12 dealerships after the incremental sync died.</small></span><span class="arr">→</span></a>
       <a class="work-row" href="projects/atlasdeploy.html"><span class="yr">2025</span><span class="ttl">Multi-site release, wave orchestration<small>Pushed a version across locations in waves with verified rollback, no full outage.</small></span><span class="arr">→</span></a>
@@ -92,9 +92,9 @@
     <div class="meta"><span data-i18n="f.identity">John Melek · Forward Deploy Engineer · AI Manager</span><br>john.melekdls7@gmail.com<br><a href="https://www.linkedin.com/in/john-melek-182086256?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener" style="color:var(--accent)">LINKEDIN ↗</a> · github.com/johnmelek<br><span data-i18n="f.selected">Selected work, 2021 to present.</span></div>
   </footer>
 </main>
-<script src="js/i18n.js?v=27"></script>
-  <script src="js/nav.js?v=27"></script>
-<script src="js/main.js?v=27"></script>
-<script src="js/motion.js?v=27"></script>
+<script src="js/i18n.js?v=28"></script>
+  <script src="js/nav.js?v=28"></script>
+<script src="js/main.js?v=28"></script>
+<script src="js/motion.js?v=28"></script>
 </body>
 </html>

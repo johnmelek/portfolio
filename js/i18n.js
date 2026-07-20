@@ -161,8 +161,51 @@
     'pl.pulls': { en: 'Incident, avoided', fr: 'Incident évité', es: 'Incidente, evitado' },
     'pl.runidx': { en: 'FILE / 05-PULSE · uptime monitor', fr: 'FICHIER / 05-PULSE · moniteur dispo', es: 'ARCHIVO / 05-PULSE · monitor dispo' },
     'pl.cap': { en: 'Pulse monitoring response time, cert expiry, and SSE status.', fr: 'Pulse surveille temps de réponse, expiry cert, statut SSE.', es: 'Pulse monitorea tiempo de respuesta, expiry cert y estado SSE.' },
-    'pl.h4': { en: 'OSCILLOSCOPE · live probe', fr: 'OSCILLOSCOPE · probe live', es: 'OSCILLOSCOPE · sonda live' }
+    'pl.h4': { en: 'OSCILLOSCOPE · live probe', fr: 'OSCILLOSCOPE · probe live', es: 'OSCILLOSCOPE · sonda live' },
+    // ---- additions: strings that were hardcoded English ----
+    'h.title': { en: 'GETTING<br>SOFTWARE<br><span class="out">TO RUN</span><br>AT THE SITE.', fr: 'FAIRE<br>TOURNER<br><span class="out">LE LOGICIEL</span><br>SUR LE SITE.', es: 'HACER<br>CORRER<br><span class="out">EL SOFTWARE</span><br>EN EL SITIO.' },
+    'h.marq': { en: 'RECONCILE <b>·</b> DEPLOY <b>·</b> MONITOR <b>·</b> RECOVER <b>·</b> SHIP SAME DAY <b>·</b> ZERO KEYS <b>·</b> ROOT CAUSE FIRST <b>·</b> ', fr: 'RÉCONCILIER <b>·</b> DÉPLOYER <b>·</b> SURVEILLER <b>·</b> RÉCUPÉRER <b>·</b> LIVRER LE JOUR <b>·</b> ZÉRO CLÉ <b>·</b> CAUSE D\'ABORD <b>·</b> ', es: 'RECONCILIAR <b>·</b> DESPLEGAR <b>·</b> MONITOREAR <b>·</b> RECUPERAR <b>·</b> ENTREGAR EL DÍA <b>·</b> CERO CLAVE <b>·</b> CAUSA PRIMERO <b>·</b> ' },
+    'h.principle.quote': { en: '"I do not demo slides. I demo the thing running."', fr: '"Je ne démo pas des slides. Je démo le truc qui tourne."', es: '"No demo slides. Demo lo que corre de verdad."' },
+    'h.principle.label': { en: 'Field principle', fr: 'Principe terrain', es: 'Principio terreno' },
+    'sec.approach': { en: '/ APPROACH', fr: '/ MÉTHODE', es: '/ ENFOQUE' },
+    'sec.log': { en: '/ FIELD LOG', fr: '/ JOURNAL', es: '/ REGISTRO' },
+    'sec.work': { en: '/ FIELD WORK', fr: '/ TERRAIN', es: '/ TRABAJO' },
+    'sec.set': { en: '/ THE SET', fr: '/ LA SÉRIE', es: '/ EL SET' },
+    'sec.contact': { en: '/ CONTACT', fr: '/ CONTACT', es: '/ CONTACTO' },
+    'sec.brand': { en: '/ BRAND', fr: '/ MARQUE', es: '/ MARCA' },
+    'sec.method': { en: '/ METHOD', fr: '/ MÉTHODE', es: '/ ENFOQUE' },
+    's.approach.br': { en: 'How the<br>deployment<br>runs', fr: 'Comment<br>tourne<br>le déploiement', es: 'Cómo<br>funciona<br>el despliegue' },
+    's.work.br': { en: 'Selected<br>engagements', fr: 'Missions<br>choisies', es: 'Misiones<br>seleccionadas' },
+    's.set.br': { en: 'Six tools<br>I ship', fr: 'Six outils<br>que je livre', es: 'Seis herramientas<br>que entrego' },
+    'fl.case': { en: 'CASE', fr: 'CAS', es: 'CASO' },
+    'm.needed': { en: 'Needed to demo', fr: 'Requis pour demo', es: 'Requerido para demo' },
+    'pj.open': { en: 'open conflicts:', fr: 'conflits ouverts :', es: 'conflictos abiertos:' },
+    'pj.resolve': { en: 'RESOLVE', fr: 'RÉSOUDRE', es: 'RESOLVER' },
+    'pj.allresolved': { en: '✓ ALL CONFLICTS RESOLVED · unified dataset emitted', fr: '✓ TOUS LES CONFLITS RÉSOLUS · dataset unifié émis', es: '✓ TODOS LOS CONFLICTOS RESUELTOS · dataset unificado emitido' },
+    'pj.wave': { en: 'WAVE', fr: 'VAGUE', es: 'OLA' },
+    'pj.site': { en: 'SITE-', fr: 'SITE-', es: 'SITIO-' },
+    // projects.html (THE SET) tool summaries
+    'set.es': { en: 'On-site data reconciliation. Three sources, one truth, surfaced conflicts.', fr: 'Réconciliation sur site. Trois sources, une vérité, conflits surfacés.', es: 'Reconciliación en sitio. Tres fuentes, una verdad, conflictos visibles.' },
+    'set.at': { en: 'Wave deployment orchestrator with real steps and rollback.', fr: 'Orchestrateur de vagues avec étapes réelles et rollback.', es: 'Orquestador de olas con pasos reales y rollback.' },
+    'set.pl': { en: 'Client-site uptime monitor. Response time, cert expiry, live status.', fr: 'Moniteur de dispo client. Temps de réponse, expiry cert, statut live.', es: 'Monitor de dispo en sitio. Tiempo de respuesta, expiry cert, estado live.' },
+    'set.fc': { en: 'Live fleet ops console. Deploy a site, watch it flip over WebSocket.', fr: 'Console ops flotte live. Déployez un site, voyez-le basculer en WebSocket.', es: 'Consola ops de flota live. Despliega un sitio, míralo voltear en WebSocket.' },
+    'set.qf': { en: 'Internal-tool generator. A sentence in, a working app out.', fr: 'Générateur d\'outils internes. Une phrase en entrée, une app qui marche en sortie.', es: 'Generador de herramientas internas. Una frase entra, una app funcional sale.' },
+    'set.rc': { en: 'Scoped recon and surface map. Safe local scanning, rendered as a graph.', fr: 'Recon ciblée et carte de surfaces. Scan local sûr, rendu en graphe.', es: 'Recon acotada y mapa de superficies. Scan local seguro, en un grafo.' },
+    // work.html engagement rows
+    'w.c1.t': { en: 'Automotive group, data reconciliation', fr: 'Groupe automobile, réconciliation de données', es: 'Grupo automotriz, reconciliación de datos' },
+    'w.c1.s': { en: 'Recovered 1,830 records across 12 dealerships after the incremental sync died.', fr: 'Récupéré 1 830 records sur 12 concessions après la mort de la synchro incrémentale.', es: 'Recuperó 1 830 registros en 12 concesionarias tras morir la synchro incremental.' },
+    'w.c2.t': { en: 'Multi-site release, wave orchestration', fr: 'Release multi-sites, orchestration par vagues', es: 'Release multi-sitio, orquestación por olas' },
+    'w.c2.s': { en: 'Pushed a version across locations in waves with verified rollback, no full outage.', fr: 'Poussé une version par sites en vagues avec rollback vérifié, zéro coupure.', es: 'Empujó una versión por sitios en olas con rollback verificado, cero caída.' },
+    'w.c3.t': { en: 'Client-site uptime monitor', fr: 'Moniteur de dispo client', es: 'Monitor de dispo en sitio' },
+    'w.c3.s': { en: 'Left a live health monitor behind: response time, cert expiry, SSE status.', fr: 'Laissé un moniteur de santé live : temps de réponse, expiry cert, statut SSE.', es: 'Dejó un monitor de salud live: tiempo de respuesta, expiry cert, estado SSE.' },
+    'w.c4.t': { en: 'Fleet ops console', fr: 'Console ops flotte', es: 'Consola ops de flota' },
+    'w.c4.s': { en: 'Live deploy console with WebSocket status and a streaming log tail.', fr: 'Console de déploiement live, statut WebSocket et log streamé.', es: 'Consola de despliegue live, estado WebSocket y log stream.' },
+    'w.c5.t': { en: 'Internal-tool generator', fr: 'Générateur d\'outils internes', es: 'Generador de herramientas internas' },
+    'w.c5.s': { en: 'Turned a plain sentence into a working single-file app, offline.', fr: 'Transformé une phrase en app single-file qui marche, offline.', es: 'Convirtió una frase en app single-file funcional, offline.' },
+    'w.c6.t': { en: 'Scoped recon and surface map', fr: 'Recon ciblée et carte de surfaces', es: 'Recon acotada y mapa de superficies' },
+    'w.c6.s': { en: 'Declared-scope recon with safe local scanning, rendered as a graph.', fr: 'Recon à scope déclaré, scan local sûr, rendu en graphe.', es: 'Recon de scope declarado, scan local seguro, en grafo.' }
   };
+
 
   function getLang() {
     let l = localStorage.getItem('jm-lang');
