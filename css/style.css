@@ -68,9 +68,9 @@ body::after {
 
 /* hero */
 .hero { min-height: 100vh; display: grid; grid-template-columns: minmax(0,1.02fr) minmax(0,0.98fr); align-items: stretch; position: relative; }
-.hero .left { display: flex; flex-direction: column; justify-content: center; padding: 150px 0 60px 7vw; position: relative; z-index: 3; margin-right: -12vw; }
+.hero .left { display: flex; flex-direction: column; justify-content: center; padding: 150px 0 60px 7vw; position: relative; z-index: 3; margin-right: -6vw; }
 .hero .photo { display: flex; align-items: center; justify-content: center; padding: 70px 5vw 40px 0; background: transparent; position: relative; z-index: 1; }
-.hero h1 { position: relative; z-index: 3; margin-right: -12vw; }
+.hero h1 { position: relative; z-index: 3; margin-right: -6vw; }
 .hero .photo .photo-frame { width: 100%; max-width: 520px; }
 .hero .kick { font-family: var(--mono); font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
   color: var(--accent); margin-bottom: 18px; }
