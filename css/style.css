@@ -443,6 +443,17 @@ body.sk-atlasdeploy .gantt .bar{height:22px; background:var(--accent); box-shado
   .pj-grid { grid-template-columns: 1fr; }
 }
 
+/* mobile safety net: never allow horizontal scroll/zoom-out on phone */
+@media (max-width: 860px) {
+  html, body { overflow-x: hidden; width: 100%; }
+  main { overflow-x: hidden; }
+  .pj, .sec, section, .world-shell, .comp, .recon-map, .atlas-grid,
+  .con-nodes, .pulse-bars, .chat, .term, .shot, .foot { max-width: 100%; }
+  .recon-map, .atlas-grid, .con-nodes, .pulse-bars, .shot { overflow: hidden; }
+  img, svg, canvas { max-width: 100%; }
+  .foot .big, .foot .meta { max-width: 100%; overflow-wrap: anywhere; word-break: break-word; }
+}
+
 /* ================= EDITORIAL + MOTION LAYER ================= */
 /* per-world generative canvas */
 #world-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; opacity: .55; }
@@ -461,8 +472,11 @@ main { position: relative; z-index: 2; }
 .chan:hover .tx .s { opacity: .85; }
 @media (max-width: 860px) {
   .channels { grid-template-columns: 1fr; }
-  .chan { padding: 18px 16px; }
+  .sec .channels { grid-template-columns: 1fr; }
+  .chan { padding: 18px 16px; min-width: 0; }
   .chan .ic { width: 30px; height: 30px; flex-basis: 30px; }
+  .chan .tx { min-width: 0; }
+  .chan .tx .s { overflow-wrap: anywhere; word-break: break-word; }
 }
 
 /* risograph grain over everything */
