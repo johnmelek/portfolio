@@ -80,14 +80,13 @@ body::after {
 .hero h1 .out { -webkit-text-stroke: 2px var(--ink); color: transparent; }
 .hero .sub { max-width: 30ch; margin-top: 28px; font-size: 18px; color: var(--ink-2); line-height: 1.6; }
 .hero .sub b { color: var(--ink); }
-.hero .photo { position: relative; overflow: hidden; background: #000; }
-.hero .photo img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.15) contrast(1.05);
-  transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
-.hero .photo:hover img { transform: scale(1.04); }
-.hero .photo .tag { position: absolute; left: 18px; bottom: 18px; font-family: var(--mono);
-  font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #fff;
-  background: rgba(0,0,0,.5); padding: 7px 12px; backdrop-filter: blur(6px); }
-.hero .photo .tag b { color: var(--accent); }
+.hero .photo { flex: 0 0 42%; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.photo-frame { position: relative; aspect-ratio: 640 / 961; width: 100%; max-width: 380px; }
+.photo-frame .ring { position: absolute; inset: -16px; border: 2px dashed var(--line); }
+.photo-glitch { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: screen; background: linear-gradient(90deg, rgba(46,107,255,.5), rgba(255,46,154,.5), rgba(46,107,255,.5)); background-size: 200% 100%; }
+.photo-frame:hover .photo-glitch { opacity: .35; animation: glitch .5s steps(2) infinite; background-position: 100% 0; }
+.photo-frame:hover img { filter: grayscale(0) contrast(1.08); transform: scale(1.03); }
+.photo-tag { position: absolute; bottom: -14px; left: -14px; background: var(--accent); color: #000; font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; padding: 8px 14px; font-weight: 600; }
 .hero .cta { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
 .btn { font-family: var(--mono); font-size: 13px; letter-spacing: .04em; padding: 15px 26px;
   border: 1.5px solid var(--ink); background: transparent; color: var(--ink); transition: all .22s; }
