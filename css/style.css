@@ -195,15 +195,15 @@ body::after {
 .work-row:hover .arr { color: var(--accent); transform: translateX(10px); }
 
 /* footer */
-.foot { padding: 80px 7vw 90px; border-top: 1.5px solid var(--line); display: flex;
-  justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
-.foot .big { font-family: var(--disp); font-weight: 800; font-size: clamp(40px, 9vw, 120px);
-  letter-spacing: -.04em; text-transform: uppercase; line-height: .9; }
+.foot { padding: 50px 6vw 60px; border-top: 1.5px solid var(--line); display: flex;
+  justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
+.foot .big { font-family: var(--disp); font-weight: 800; font-size: clamp(36px, 8vw, 100px);
+  letter-spacing: -.04em; text-transform: uppercase; line-height: .85; }
 .foot .big a { color: var(--accent); }
-.foot .meta { font-family: var(--mono); font-size: 12px; color: var(--dim); text-align: right; line-height: 1.9; }
+.foot .meta { font-family: var(--mono); font-size: 12px; color: var(--dim); text-align: right; line-height: 1.8; }
 
 /* footer social card row: icon-only bubbles that expand to show the full name on hover */
-.foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; flex-basis: 100%; margin-top: 34px; }
+.foot-links { display: flex; flex-wrap: nowrap; gap: 12px; margin-top: 0; flex-basis: auto; }
 .foot-links .chan { position: relative; width: 64px; height: 64px; padding: 0; border: 1.5px solid var(--accent); border-radius: 50%; background: transparent; color: var(--accent); text-decoration: none; overflow: visible; display: inline-flex; align-items: center; justify-content: center; transition: background .2s, color .2s, border-color .2s, box-shadow .2s; }
 .foot-links .chan .ic { width: 60px; height: 60px; flex: 0 0 60px; display: grid; place-items: center; }
 .foot-links .chan .ic svg { width: 26px; height: 26px; fill: currentColor; display: block; }
